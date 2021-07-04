@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<section class="sorties">
+
+<h1> Proposition de sorties des membres </h1>
+
+<div class="sortie">
+<div class="alignement">
+{% for user in users %}
+<h1> {{user.pre}} </h1>
+{% endfor %}
+
+{% for sortie in sorties %}
+<img src="{{sortie.image}}">
+<p> {{sortie.date}} </p>
+<p> {{sortie.ville}}</p>
+<p> {{sortie.description}} </p>
+{% endfor %}
+</div>
+
+<div class="message">
+<a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a>
+</div>
+<div class='accepte'>
+<a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-primary"> Accepter la sortie </button> </a>
+</div>
+</div>
+
+
+</section>
+
+{% endblock %}

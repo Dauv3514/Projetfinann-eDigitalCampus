@@ -9,28 +9,27 @@
 
     <body>
 
-    <div class="navbar">
-      <nav>
+<div class="navbar">
+    <nav>
         <ul>
-          <li> <a href="{{ path('accueil') }}"> Accueil </a></li>
-          <li> <a href="{{ path('concept') }}">  Le concept </a></li>
-          <li> <a href="{{ path('sorties') }}">  Les sorties </a></li>
-          <li> <a href="{{ path('accueil') }}" class="button">
+        <li> <a href="{{ path('accueil') }}"> Accueil </a></li>
+        <li> <a href="{{ path('concept') }}">  Le concept </a></li>
+        <li> <a href="{{ path('sorties') }}">  Les sorties </a></li>
+        <li> <a href="{{ path('accueil') }}" class="button">
                 <img src="images/logo handi'acc.png" alt="Logo du site" />
-          </a></li>
-          <li> <a href="{{ path('connexion') }}">Connexion </a></li>
-          <li> <a href="{{ path('inscription') }}"> Inscription </a> </li>
+        </a></li>
+        <li> <a href="{{ path('connexion') }}"> Mon Dashboard </a></li>
+        <li> <a href="{{ path('connexion') }}"> Déconnexion </a></li>
         </ul>     
-      </nav>
-    </div>
- 
-    
+    </nav>
+</div>
+
         {% block body %}
     
         
         {% endblock %}
 
-    <div class="footer">
+            <div class="footer">
       <nav>
         <ul>
           <li> <a href="{{ path('accueil') }}"> CGV </a></li>
@@ -50,4 +49,3 @@
     
     </body>
 </html>
-
