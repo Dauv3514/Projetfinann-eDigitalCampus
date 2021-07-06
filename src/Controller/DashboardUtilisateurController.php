@@ -2,15 +2,20 @@
 
 namespace App\Controller;
 
+use App\Entity\Sortie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use App\Entity\User;
+use App\Form\AjoutsortieType;
+use App\Repository\SortieRepository;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardUtilisateurController extends AbstractController
 {
 
     /**
-     * @Route("/dashboard", name="dashboard")
+     * @Route("/dashboard", name="dashboard", methods={"GET","POST"})
      */
     public function dashboard(): Response
     {
@@ -20,12 +25,53 @@ class DashboardUtilisateurController extends AbstractController
     }
 
     /**
-     * @Route("/dashboard/sortiesencours", name="dashboardsortiesencours")
+     * @Route("/dashboard/sortiesencours", name="dashboardsortiesencours", methods={"GET", "POST"})
      */
-    public function dashboardsortiesencours(): Response
+    public function dashboardsortiesencours(SortieRepository $SortieRepository): Response
     {
-        return $this->render('dashboardutilisateur/dashboardsortiesencours.html.twig', [
-            'controller_name' => 'DashboardUtilisateurController',
+        
+        
+        //affiche mes données sur la page par ID       
+        $repo=$this->getDoctrine()->getRepository(Sortie::class);
+        // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
+        $sorties=$repo->findAll();
+
+        //affiche mes données sur la page par ID       
+        $repo=$this->getDoctrine()->getRepository(User::class);
+        // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
+        $users=$repo->findAll();
+
+
+        return $this->render('dashboardutilisateur/dashboardsortiesencours.html.twig', [      
+            'sorties'=>$sorties,
+            'users'=>$users,
+        ]);
+    }
+
+    /**
+     * @Route("dashboard/nouvellesortie", name="nouvellesortie", methods={"GET","POST"})
+     */
+    public function nouvellesortie(Request $request): Response
+    {
+        dump($request);
+
+        $sortie = new Sortie();
+        $form = $this->createForm(AjoutsortieType::class, $sortie);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($sortie);
+            $entityManager->flush();
+ 
+            return $this->redirectToRoute('nouvellesortie');
+        }
+
+        var_dump($sortie);
+
+        return $this->render('dashboardutilisateur/nouvellesortie.html.twig', [
+            'form' => $form->createView(),
+            'sortie' => $sortie,
         ]);
     }
 

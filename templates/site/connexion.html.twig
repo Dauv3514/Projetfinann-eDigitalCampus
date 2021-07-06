@@ -21,6 +21,8 @@
 
     <div class="container">
 
+    <div class="milieu2">
+
     <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -40,6 +42,8 @@
         value="{{ csrf_token('authenticate') }}"
     >
 
+    
+
     </div>
 
     {#
@@ -56,6 +60,8 @@
     <button class="btn btn-lg btn-danger" type="submit">
     Connexion
     </button>
+
+    </div>
 
     </div>
 

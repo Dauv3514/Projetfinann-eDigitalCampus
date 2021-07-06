@@ -16,9 +16,9 @@
 
 
 <div class="appel">
-{% for user in users %}
-<h1> {{user.pre}} </h1>
-{% endfor %}
+{# {% for user in users %} #}
+{# <h1> {{user.pre}} </h1> #}
+{# {% endfor %} #}
 </div>
 
 <div class="sort">
@@ -29,7 +29,7 @@
 <p> {{sortie.ville}}</p>
 <p> {{sortie.description}} </p>
 <div class="message">
-<a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a>
+{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
 </div>
 <div class='accepte'>
 <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-primary"> Accepter la sortie </button> </a>

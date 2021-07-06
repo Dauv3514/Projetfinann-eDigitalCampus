@@ -2,9 +2,22 @@
 
 {% block body %}
 
-<div class="e"> 
+<div class="bienvenue"> 
 
 <h1> Bienvenue sur votre Dashboard : {{app.user.pre}} {{app.user.nom}} </h1>
+{{app.user.id}}
+
+<p> Rôles </p>
+
+{% for role in app.user.roles %}
+{{role}}
+{% endfor %}
+
+</div>
+
+<div class="illustration">
+
+<img src="images/tiralarc.jpg">
 
 </div>
 
