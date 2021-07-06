@@ -219,7 +219,11 @@
   height: 140px;
 }
 
-.alignement {
+.alignement h1 {
+  font-size: 50px;
+}
+
+.appel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,7 +232,111 @@
           justify-content: center;
 }
 
-.alignement h1 {
-  font-size: 50px;
+.sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* page d'inscription */
+.inscriptionsite h1 {
+  text-align: center;
+}
+
+.logosite {
+  width: 250px;
+  height: 125px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logosite img {
+  width: 100%;
+  height: 100%;
+}
+
+.compte {
+  text-align: center;
+}
+
+.inscription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container2 {
+  height: 600px;
+  width: 600px;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* page de connexion */
+.connexion h1 {
+  text-align: center;
+}
+
+.container {
+  height: 600px;
+  width: 300px;
+  border: 2px solid black;
+}
+
+.pasdecompte {
+  text-align: center;
+}
+
+/* page dashboard */
+.sidebar {
+  height: 100%;
+  width: 400px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 40px;
+  background-color: #4D4D4D;
+}
+
+.sidebar a {
+  padding: 8px;
+  font-size: 24px;
+  display: block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.sidebar .sidebar a:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+.sidebar .body-text {
+  margin-left: 150px;
+  font-size: 18px;
+}
+
+.e {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */

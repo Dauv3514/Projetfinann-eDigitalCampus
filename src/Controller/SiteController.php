@@ -82,4 +82,40 @@ class SiteController extends AbstractController
     }
 
 
+
+
+
+
+
+
+        /**
+     * @Route("/concept2", name="concept2")
+     */
+    public function concept2(): Response
+    {
+        return $this->render('site/concept2.html.twig', [
+            'controller_name' => 'SiteController',
+        ]);
+    }
+
+    /**
+     * @Route("/sorties2", name="sorties2")
+     */
+    public function sorties2(): Response
+    {
+        //affiche mes données sur la page
+        $repo=$this->getDoctrine()->getRepository(Sortie::class);
+        $sorties = $repo->findAll();
+
+        $repository=$this->getDoctrine()->getRepository(User::class);
+        $users = $repository->findAll();
+
+
+        return $this->render('site/sorties2.html.twig', [
+            'sorties'=>$sorties,
+            'users'=>$users,
+        ]);
+    }
+
+
 }

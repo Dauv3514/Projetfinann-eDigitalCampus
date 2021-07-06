@@ -22,11 +22,11 @@ class RegistrationFormType extends AbstractType
             ->add('pre')
             ->add('avatar')
             ->add('email')
-            ->add('agreeTerms', CheckboxType::class, [
+            ->add('validation', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Tu dois accepter les conditions',
                     ]),
                 ],
             ])

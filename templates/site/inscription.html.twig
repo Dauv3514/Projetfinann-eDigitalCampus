@@ -1,29 +1,47 @@
-{% extends 'base.html.twig' %}
+{% extends 'style.html.twig' %}
 
 {% block title %}Register{% endblock %}
 
 {% block body %}
 
+    <div class="inscriptionsite">
+
     <h1> Inscription sur le site </h1>
+    <div class="logosite">
+    <a href="{{ path('accueil') }}" class="button">
+                <img src="images/logo handi'acc.png" alt="Logo du site" />
+    </a>
+    </div>
 
-    {{ form_start(registrationForm) }}
+    <div class="inscription">
 
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.pre) }}
-        {{ form_row(registrationForm.nom) }}
-        {{ form_row(registrationForm.avatar) }}  
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        <div class="container2">
+
+        {{ form_start(registrationForm) }}
+
+        {{ form_row(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
+        {{ form_row(registrationForm.pre, {'attr': {'placeholder': 'Prenom'}}) }}
+        {{ form_row(registrationForm.nom, {'attr': {'placeholder': 'Nom'}}) }}
+        {{ form_row(registrationForm.avatar,{'attr': {'placeholder': 'Avatar'}}) }}
+        {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de Passe'}}) }}
+        {{ form_row(registrationForm.validation) }}
         
-        <button type="submit" class="btn btn-success"> Inscription </button>
+        
+        <button type="submit" class="btn btn-danger"> Créer un compte </button>
+    
+        </div>
 
-    {{ form_end(registrationForm) }}
+        {{ form_end(registrationForm) }}
 
 
+    </div>
 
+        <div class="compte">
+        <p> Vous avez un compte ? </p>
+        <a href="{{ path('connexion') }}"> Connectez-vous ! </a>
+        </div>      
 
+    </div>
 
 {% endblock %}
 

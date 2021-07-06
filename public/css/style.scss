@@ -253,8 +253,7 @@
 
 .alignement {
 
-    display: flex;
-    justify-content: center;
+    
 
     h1 {
 
@@ -264,3 +263,148 @@
     
 
 }
+
+.appel {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.sort {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+
+/* page d'inscription */
+
+.inscriptionsite {
+
+    h1 {
+
+    text-align: center;
+
+    }
+
+}
+
+.logosite {
+
+    width: 250px ;
+    height: 125px ;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+    img {
+
+    width: 100% ;
+    height: 100% ;
+    
+    }
+
+}
+
+.compte {
+
+    text-align: center;
+
+}
+
+.inscription {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.container2 {
+
+    height: 600px ;
+    width: 600px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+/* page de connexion */
+
+.connexion {
+
+    h1 {
+
+    text-align: center;
+
+    }
+    
+}
+
+.container {
+
+    height: 600px;
+    width: 300px;
+    border: 2px solid black;
+    
+}
+
+.pasdecompte {
+
+    text-align:center ;
+
+}
+
+/* page dashboard */
+
+.sidebar {
+
+    height: 100%;
+    width: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    background-color: #4D4D4D;
+
+    a {
+
+    padding: 8px;
+    font-size: 24px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center ;
+
+    }
+
+    .sidebar a:hover {
+
+    cursor: pointer;
+    opacity: .7;
+
+    }
+
+    .body-text {
+
+    margin-left: 150px;
+    font-size: 18px;
+
+    }
+            
+}
+
+.e {
+
+display: flex;
+justify-content: center;
+
+}
+
+
