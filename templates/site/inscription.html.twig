@@ -5,13 +5,12 @@
 {% block body %}
 
     <div class="inscriptionsite">
-
-    <h1> Inscription sur le site </h1>
     <div class="logosite">
     <a href="{{ path('accueil') }}" class="button">
                 <img src="images/logo handi'acc.png" alt="Logo du site" />
     </a>
     </div>
+    <h1> Créer votre compte </h1>
 
     <div class="inscription">
 
@@ -19,11 +18,21 @@
 
         {{ form_start(registrationForm) }}
 
-        {{ form_row(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
-        {{ form_row(registrationForm.pre, {'attr': {'placeholder': 'Prenom'}}) }}
-        {{ form_row(registrationForm.nom, {'attr': {'placeholder': 'Nom'}}) }}
-        {{ form_row(registrationForm.avatar,{'attr': {'placeholder': 'Avatar'}}) }}
-        {{ form_row(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de Passe'}}) }}
+        <div id="email">
+        {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
+        </div>
+        <div id="prenom">
+        {{ form_widget(registrationForm.prenom, {'attr': {'placeholder': 'Prenom'}}) }}
+        </div>
+        <div id="nom">
+        {{ form_widget(registrationForm.nom, {'attr': {'placeholder': 'Nom'}}) }}
+        </div>
+        <div id="avatar">
+        {{ form_widget(registrationForm.avatar,{'attr': {'placeholder': 'Avatar'}}) }}
+        </div>
+        <div id="motdepasse">
+        {{ form_widget(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de Passe'}}) }}
+        </div>
         {{ form_row(registrationForm.validation) }}
         
         

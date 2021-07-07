@@ -20,6 +20,7 @@
 <div class="formulaireajout">
 {{ form_start(form) }}
 {{ form_widget(form) }}
+<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 <div class="boutonajout">
 <a href="{{ path('nouvellesortie') }}"> <button type="submit" class="btn btn-primary"> Ajouter </button> </a>
 </div>

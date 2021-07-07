@@ -214,9 +214,21 @@
 }
 
 /* pages les sorties */
+.sortie {
+  height: 100%;
+  width: 1000px;
+  border: 2px solid black;
+}
+
 .sortie img {
   width: 160px;
   height: 140px;
+}
+
+.alignement {
+  height: 100%;
+  width: 1000px;
+  border: 2px solid black;
 }
 
 .alignement h1 {
@@ -233,12 +245,15 @@
 }
 
 .sort {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  height: 300px;
+  width: 300px;
+}
+
+.sor {
+  height: 300px;
+  width: 300px;
+  border: 2px solid blue;
+  margin: 30px;
 }
 
 /* page d'inscription */

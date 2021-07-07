@@ -242,6 +242,10 @@
 
 .sortie {
 
+    height: 100%;
+    width: 1000px;
+    border: 2px solid black;
+
     img {
 
     width: 160px ;
@@ -253,7 +257,10 @@
 
 .alignement {
 
-    
+    height : 100%;
+    width : 1000px;
+    border: 2px solid black;
+
 
     h1 {
 
@@ -273,9 +280,18 @@
 
 .sort {
 
-    display: flex;
-    justify-content: center;
+    height: 300px;
+    width: 300px;
 
+}
+
+.sor {
+
+    height: 300px;
+    width: 300px;
+    border: 2px solid blue;
+    margin: 30px;
+    
 }
 
 
