@@ -43,6 +43,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\OneToMany(targetEntity=Sortie::class, mappedBy="user")
      */
+    private $sorties;
+
+    public function __construct()
+    {
+        $this->sorties = new ArrayCollection();
+    }
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -127,19 +133,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->miseajourcreationducompte = $miseajourcreationducompte;
 
         return $this;
-    }
-
-
-
-
-
-
-
-    private $sorties;
-
-    public function __construct()
-    {
-        $this->sorties = new ArrayCollection();
     }
 
     public function getId(): ?int

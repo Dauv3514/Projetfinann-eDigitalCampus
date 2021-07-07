@@ -447,4 +447,59 @@
           align-items: center;
   height: 100%;
 }
+
+/* pages sortiesencours */
+.sortie2 {
+  height: 100%;
+  width: 1500px;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sortie2 img {
+  width: 160px;
+  height: 140px;
+}
+
+.alignement2 {
+  height: 100%;
+  width: 1000px;
+  border: 2px solid black;
+}
+
+.alignement2 h1 {
+  font-size: 50px;
+}
+
+.appel2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sort2 {
+  height: 300px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sor2 {
+  height: 300px;
+  width: 300px;
+  border: 2px solid blue;
+  margin: 30px;
+}
 /*# sourceMappingURL=style.css.map */

@@ -291,7 +291,7 @@
     width: 300px;
     border: 2px solid blue;
     margin: 30px;
-    
+
 }
 
 
@@ -501,4 +501,65 @@
     align-items: center;
     height: 100%;
 
+}
+
+
+/* pages sortiesencours */
+
+.sortie2 {
+
+    height: 100%;
+    width: 1500px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+
+    img {
+
+        width: 160px ;
+        height: 140px ;
+    
+    }
+
+}
+
+.alignement2 {
+
+    height : 100%;
+    width : 1000px;
+    border: 2px solid black;
+
+
+    h1 {
+
+    font-size: 50px;
+
+    }
+    
+
+}
+
+.appel2 {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.sort2 {
+
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.sor2 {
+
+    height: 300px;
+    width: 300px;
+    border: 2px solid blue;
+    margin: 30px;
+    
 }
