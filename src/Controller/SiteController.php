@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Presence;
 use App\Entity\Sortie;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -83,12 +84,7 @@ class SiteController extends AbstractController
 
 
 
-
-
-
-
-
-        /**
+    /**
      * @Route("/concept2", name="concept2")
      */
     public function concept2(): Response
@@ -115,6 +111,39 @@ class SiteController extends AbstractController
             'sorties'=>$sorties,
             'users'=>$users,
         ]);
+    }
+
+    /**
+     * @Route("/sorties2/{id}", name="acceptesortie", methods={"GET"})
+     */
+    public function acceptesortie(Presence $validation): Response
+    {
+
+        $validation = true;
+        var_dump($validation); //=> bool(true)
+
+        $validation = false;
+        var_dump($validation); //=> bool(false)
+
+        $validation = new Presence();
+        # $presence->setValidation($id); }
+        $validation->setValidation(true); // this saves 1 in the table
+        $validation->setValidation(false); // this saves 0 in the table
+
+
+        if ($validation == true) {
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($validation);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('sorties2');
+        }
+
+        return $this->render('site/sorties2.html.twig', [
+
+                'presences'=> $validation,]);
+
     }
 
 

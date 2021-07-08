@@ -64,9 +64,15 @@ class Sortie
      */
     private $information;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Presence::class, mappedBy="sorties")
+     */
+    private $presences;
+
     public function __construct()
     {
         $this->information = new ArrayCollection();
+        $this->presences = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -194,6 +200,36 @@ class Sortie
             // set the owning side to null (unless already changed)
             if ($information->getSortie() === $this) {
                 $information->setSortie(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Presence[]
+     */
+    public function getPresences(): Collection
+    {
+        return $this->presences;
+    }
+
+    public function addPresence(Presence $presence): self
+    {
+        if (!$this->presences->contains($presence)) {
+            $this->presences[] = $presence;
+            $presence->setSorties($this);
+        }
+
+        return $this;
+    }
+
+    public function removePresence(Presence $presence): self
+    {
+        if ($this->presences->removeElement($presence)) {
+            // set the owning side to null (unless already changed)
+            if ($presence->getSorties() === $this) {
+                $presence->setSorties(null);
             }
         }
 

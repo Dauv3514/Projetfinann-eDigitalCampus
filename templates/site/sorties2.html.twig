@@ -32,7 +32,7 @@
 <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {{app.user.prenom}} </button> </a>
 </div>
 <div class='accepte'>
-<a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-primary"> Accepter la sortie </button> </a>
+<a href="{{ path('acceptesortie', { 'id': sortie.id })}}"> <button type="submit" class="btn btn-primary"> Accepter la sortie </button> </a>
 </div>
 </div>
 {% endfor %}

@@ -216,7 +216,7 @@
 /* pages les sorties */
 .sortie {
   height: 100%;
-  width: 1000px;
+  width: 1200px;
   border: 2px solid black;
 }
 
@@ -227,30 +227,26 @@
 
 .alignement {
   height: 100%;
-  width: 1000px;
+  width: 1200px;
   border: 2px solid black;
 }
 
 .alignement h1 {
-  font-size: 50px;
+  font-size: 40px;
 }
 
-.appel {
+.sort {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.sort {
-  height: 300px;
+  height: 500px;
   width: 300px;
 }
 
 .sor {
-  height: 300px;
   width: 300px;
   border: 2px solid blue;
   margin: 30px;
@@ -450,25 +446,27 @@
 
 /* pages sortiesencours */
 .sortie2 {
-  height: 100%;
-  width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1000px;
+  width: 600px;
   border: 2px solid black;
+}
+
+.sortie2 img {
+  width: 180px;
+  height: 160px;
+}
+
+.alignement2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.sortie2 img {
-  width: 160px;
-  height: 140px;
-}
-
-.alignement2 {
-  height: 100%;
-  width: 1000px;
+  height: 1000px;
+  width: 600px;
   border: 2px solid black;
 }
 
@@ -476,30 +474,34 @@
   font-size: 50px;
 }
 
-.appel2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .sort2 {
-  height: 300px;
-  width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 400px;
+  width: 300px;
 }
 
 .sor2 {
-  height: 300px;
+  height: 400px;
   width: 300px;
   border: 2px solid blue;
   margin: 30px;
+}
+
+.e2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.e2 h1 {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,30 +4,30 @@
 
 {% block body %}
 
-<h1> Sorties en cours </h1>
 
-<div class="e"> 
+<div class="e2"> 
+<div class="milieu2">
+<div class="boutajout">
 {{app.user.email}}
-<a href="{{ path('nouvellesortie') }}"> <button type="submit" class="btn btn-primary"> Ajouter une sortie </button> </a> 
-{% for sortie in app.user.sorties %}
-{% endfor %} 
+<a href="{{ path('nouvellesortie')}}"> <button type="submit" class="btn btn-primary"> Ajouter une sortie </button> </a>
+<h1> Mes propositions de sorties en cours (accompagnant trouvé) </h1>
+</div>
+</div>
 </div>
 
 
 <div class="sortie2">
 <div class="alignement2">
 
-
-<div class="appel2">
+{#<div class="appel2">
 {% for user in users %} 
 <h1> {{user.prenom}} </h1> 
 {% endfor %} 
-
-</div>
+</div>#}
 
 
 <div class="sort2">
-{% for sortie in sorties %}
+{% for sortie in app.user.sorties %}
 <div class="sor2">
 <img src="{{sortie.image}}">
 <p> {{sortie.date}} </p>

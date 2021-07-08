@@ -48,6 +48,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->sorties = new ArrayCollection();
+        $this->presences = new ArrayCollection();
     }
 
     /**
@@ -74,6 +75,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="datetime")
      */
     private $miseajourcreationducompte;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Presence::class, mappedBy="users")
+     */
+    private $presences;
 
     public function getPrenom(): ?string
     {
@@ -249,6 +255,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($sorty->getUser() === $this) {
                 $sorty->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Presence[]
+     */
+    public function getPresences(): Collection
+    {
+        return $this->presences;
+    }
+
+    public function addPresence(Presence $presence): self
+    {
+        if (!$this->presences->contains($presence)) {
+            $this->presences[] = $presence;
+            $presence->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removePresence(Presence $presence): self
+    {
+        if ($this->presences->removeElement($presence)) {
+            // set the owning side to null (unless already changed)
+            if ($presence->getUsers() === $this) {
+                $presence->setUsers(null);
             }
         }
 
