@@ -116,33 +116,19 @@ class SiteController extends AbstractController
     /**
      * @Route("/sorties2/{id}", name="acceptesortie", methods={"GET"})
      */
-    public function acceptesortie(Presence $validation): Response
+    public function acceptesortie(Sortie $sortie): Response
     {
 
-        $validation = true;
-        var_dump($validation); //=> bool(true)
+        $presence = new Presence();
+        $presence->setSorties($sortie);
+        $presence->setUsers($this->getUser());
+        $presence->setValidation(false);
 
-        $validation = false;
-        var_dump($validation); //=> bool(false)
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($presence);
+        $entityManager->flush();
 
-        $validation = new Presence();
-        # $presence->setValidation($id); }
-        $validation->setValidation(true); // this saves 1 in the table
-        $validation->setValidation(false); // this saves 0 in the table
-
-
-        if ($validation == true) {
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($validation);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('sorties2');
-        }
-
-        return $this->render('site/sorties2.html.twig', [
-
-                'presences'=> $validation,]);
+        return $this->redirectToRoute('sorties2');
 
     }
 

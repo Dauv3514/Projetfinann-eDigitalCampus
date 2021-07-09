@@ -30,7 +30,6 @@ class DashboardUtilisateurController extends AbstractController
     public function dashboardsortiesencours(SortieRepository $SortieRepository): Response
     {
         
-        
         //affiche mes données sur la page par ID       
         $repo=$this->getDoctrine()->getRepository(Sortie::class);
         // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
@@ -41,10 +40,20 @@ class DashboardUtilisateurController extends AbstractController
         // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
         $users=$repo->findAll();
 
+        // // from inside a controller
+        //     $presence = true ;
+
+        //     $sorties = $this -> getDoctrine ()
+        //     -> getRepository ( Sortie :: class )
+        //     -> findAllGreaterThanSortie ( $presence ); 
+
+        // // ... 
+
 
         return $this->render('dashboardutilisateur/dashboardsortiesencours.html.twig', [      
             'sorties'=>$sorties,
             'users'=>$users,
+            
         ]);
     }
 

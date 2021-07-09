@@ -19,6 +19,24 @@ class SortieRepository extends ServiceEntityRepository
     }
 
     // /**
+    //  * @return Sortie[]
+    //  */
+    // public function findAllGreaterThanSortie(int $presence): array
+    // {
+    //     $entityManager = $this->getEntityManager();
+
+    //     $query = $entityManager->createQuery(
+    //         'SELECT p
+    //         FROM App\Entity\Sortie p
+    //         WHERE p.presence > :presence
+    //         ORDER BY p.presence ASC'
+    //     )->setParameter('presence', $presence);
+
+    //     // returns an array of Presence objects
+    //     return $query->getResult();
+    // } 
+
+    // /**
     //  * @return Sortie[] Returns an array of Sortie objects
     //  */
     /*
