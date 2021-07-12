@@ -1,8 +1,8 @@
 {% extends 'basesidebar.html.twig' %}
 
-{% block title %}Hello SiteController!{% endblock %}
 
 {% block body %}
+
 
 <div class="liens">
 
@@ -11,33 +11,37 @@
 
 </div>
 
-<div class="container3">
+<div class="container5">
 
-<div class="ajoutsortie">
-<h1> Ajouter une nouvelle sortie </h1>
+<div class="modifsortie">
+<h1> Modifier la sortie </h1>
 
-<div class="container4">
-<div class="formulaireajout">
+<div class="container6">
+<div class="formulairemodif">
 {{ form_start(form) }}
 <div id="date1">
+<p> Date </p>
 {{ form_widget(form.date, {'attr': {'placeholder': 'Date de la sortie', 'size':'50'}}) }}
 </div>
 <div id="ville1">
+<p> Ville </p>
 {{ form_widget(form.ville, {'attr': {'placeholder': 'Lieu de la sortie (ville)', 'size':'50'}}) }}
 </div>
 <div id="adresse1">
-{{ form_widget(form.adresse, {'attr': {'placeholder': 'Lien de l\'illustration', 'size':'50'}}) }}
+<p> Adresse </p>
+{{ form_widget(form.adresse, {'attr': {'placeholder': 'Lien de lillustration', 'size':'50'}}) }}
 </div>
 <div id="image1">
-{{ form_widget(form.image, {'attr': {'placeholder': 'Adresse de la sortie (rue)', 'size':'50'}}) }}
+<p> Image </p>
+{{ form_widget(form.image, {'attr': {'placeholder': 'Adresse de la sortie', 'size':'50'}}) }}
 </div>
 <div id="description1">
-{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'style':'width: 428px','height':'400px'}}) }}
+<p> Description </p>
+{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'size':'200'}}) }}
 </div>
 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-<div class="boutonajout">
-<a href="{{ path('nouvellesortie') }}"> <button type="submit" class="btn btn-primary"> Ajouter </button> </a>
-</div>
+<div class="boutonmodif">
+<a href="{{ path('dashboardsortiesencours') }}"> <button type="submit" class="btn btn-primary"> Modifier </button> </a>
 {{ form_end(form) }}
 </div>
 </div>
@@ -46,5 +50,6 @@
 
 </div>
 
+</div>
 
 {% endblock %}

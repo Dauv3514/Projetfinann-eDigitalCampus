@@ -14,9 +14,10 @@ class AjoutsortieType extends AbstractType
         $builder
             ->add('date')
             ->add('ville')
+            ->add('image')
             ->add('adresse')
             ->add('description')
-            ->add('image')
+            
             
         ;
     }

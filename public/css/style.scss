@@ -127,8 +127,8 @@
 
     img {
     
-        height: 450px ;
-        width: 450px ;
+    height: 450px ;
+    width: 450px ;
     
     }
 }
@@ -427,7 +427,7 @@
 
 .connexion {
 
-    width: 400px;
+    width: 500px;
     
 
     h1 {
@@ -643,6 +643,81 @@
 }
 
 
+/* page modification d'une sortie */
+
+.container5 {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.container6 {
+
+    height: 600px;
+    width: 600px;
+    border: 2px solid black;
+
+}
+
+.formulairemodif {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+.modifsortie {
+
+    h1 {
+        
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+        
+    }
+
+}
+
+
+#date1 {
+
+    padding-bottom: 20px;
+
+}
+
+#ville1 {
+
+    padding-bottom: 20px;
+
+}
+
+#adresse1 {
+
+    padding-bottom: 20px;
+
+}
+
+#image1 {
+
+    padding-bottom: 20px;
+
+}
+
+#description1 {
+
+    padding-bottom: 20px;
+
+}
+
+#validation {
+
+    padding-bottom: 20px;
+
+}
+
+
 /* pages sortiesencours */
 
 .sortie2 {
@@ -687,14 +762,14 @@
 
     display: flex;
     justify-content: center;
-    height: 400px;
+    height: 500px;
     width: 300px;
     
 }
 
 .sor2 {
 
-    height: 400px;
+    height: 500px;
     width: 300px;
     border: 2px solid blue;
     margin: 30px;
@@ -727,4 +802,10 @@
     }
 }
 
+#sup {
+
+    height: 50px;
+    width: 50px;
+
+}
 

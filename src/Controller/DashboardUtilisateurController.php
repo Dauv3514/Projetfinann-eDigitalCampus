@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\User;
 use App\Form\AjoutsortieType;
+use App\Form\SortieType;
 use App\Repository\SortieRepository;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -58,7 +59,7 @@ class DashboardUtilisateurController extends AbstractController
     }
 
     /**
-     * @Route("dashboard/nouvellesortie", name="nouvellesortie", methods={"GET","POST"})
+     * @Route("/dashboard/nouvellesortie", name="nouvellesortie", methods={"GET","POST"})
      */
     public function nouvellesortie(Request $request): Response
     {
@@ -83,6 +84,27 @@ class DashboardUtilisateurController extends AbstractController
             'sortie' => $sortie,
         ]);
     }
+
+        /**
+     * @Route("/dashboard/modificationsortie/{id}", name="modificationsortie", methods={"GET","POST"})
+     */
+    public function edit(Request $request, Sortie $sortie): Response
+    {
+        $form = $this->createForm(AjoutsortieType::class, $sortie);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('dashboardsortiesencours', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('dashboardutilisateur/modificationsortie.html.twig', [
+            'sortie' => $sortie,
+            'form' => $form,
+        ]);
+    }
+
 
     /**
      * @Route("/dashboard/messages", name="dashboardmessages")

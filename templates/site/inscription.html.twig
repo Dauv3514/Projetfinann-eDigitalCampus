@@ -16,7 +16,7 @@
 
         <div class="container2">
 
-        {{ form_start(registrationForm) }}
+        {{ form_start(registrationForm, {'attr': {'id': 'new_edit_utilisateur'}}) }}
 
         <div id="email">
         {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Adresse email', 'size':'30'}
@@ -32,8 +32,13 @@
         {{ form_widget(registrationForm.avatar,{'attr': {'placeholder': 'Avatar', 'size':'30'}}) }}
         </div>
         <div id="motdepasse">
-        {{ form_widget(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de Passe', 'size':'30'}}) }}
+        {{ form_widget(registrationForm.plainPassword,{'attr': {'id':'mon_mp', 'placeholder': 'Mot de Passe', 'size':'30'}})}}
         </div>
+    {#  <div id="verifmotdepasse">          
+        <input type="password" id="verifpass" placeholder="Saisir une seconde fois le mot de passe" size="30" =required>
+        </div> #}
+        
+
         <div id="validation">
         {{ form_row(registrationForm.validation) }}
         </div>
