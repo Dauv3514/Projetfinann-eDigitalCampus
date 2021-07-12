@@ -19,22 +19,24 @@
         {{ form_start(registrationForm) }}
 
         <div id="email">
-        {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Adresse email'}}) }}
+        {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Adresse email', 'size':'30'}
+        }) }}
         </div>
         <div id="prenom">
-        {{ form_widget(registrationForm.prenom, {'attr': {'placeholder': 'Prenom'}}) }}
+        {{ form_widget(registrationForm.prenom, {'attr': {'placeholder': 'Prenom', 'size':'30'}}) }}
         </div>
         <div id="nom">
-        {{ form_widget(registrationForm.nom, {'attr': {'placeholder': 'Nom'}}) }}
+        {{ form_widget(registrationForm.nom, {'attr': {'placeholder': 'Nom', 'size':'30'}}) }}
         </div>
         <div id="avatar">
-        {{ form_widget(registrationForm.avatar,{'attr': {'placeholder': 'Avatar'}}) }}
+        {{ form_widget(registrationForm.avatar,{'attr': {'placeholder': 'Avatar', 'size':'30'}}) }}
         </div>
         <div id="motdepasse">
-        {{ form_widget(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de Passe'}}) }}
+        {{ form_widget(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de Passe', 'size':'30'}}) }}
         </div>
+        <div id="validation">
         {{ form_row(registrationForm.validation) }}
-        
+        </div>
         
         <button type="submit" class="btn btn-danger"> Créer un compte </button>
     

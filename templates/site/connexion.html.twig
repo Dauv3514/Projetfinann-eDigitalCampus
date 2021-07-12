@@ -2,6 +2,8 @@
 
 {% block body %}
 
+<div class="axe">
+
 <div class="connexion">
 
 
@@ -13,7 +15,7 @@
 
     <div class="logosite">
     <a href="{{ path('accueil') }}" class="button">
-                <img src="images/logo handi'acc.png" alt="Logo du site" />
+        <img src="images/logo handi'acc.png" alt="Logo du site" />
     </a>
     </div>
 
@@ -30,21 +32,25 @@
     
     <div class="adresseemail">
     
-    <input type="email" name="email" id="inputEmail" class="form" autocomplete="email" placeholder="Email" required autofocus>
+    <input type="email" name="email" size="30" id="inputEmail" class="form" autocomplete="email" placeholder="Email" required autofocus>
 
     </div>
 
     <div class="motdepasse">
     
-    <input type="password" name="password" id="inputPassword" class="form" autocomplete="current-password" placeholder="Mot de passe" required>
+    <input type="password" size="30" name="password" id="inputPassword" class="form" autocomplete="current-password" placeholder="Mot de passe" required>
 
     <input type="hidden" name="_csrf_token"
         value="{{ csrf_token('authenticate') }}"
     >
 
-    
-
     </div>
+    
+    <div class="motdepasseoublie">
+
+    <a href="{{ path('dashboard') }}">  Mot de passe oublié ?  </a> 
+
+    </div> 
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -60,6 +66,10 @@
     <button class="btn btn-lg btn-danger" type="submit">
     Connexion
     </button>
+
+    </div>
+
+    </div>
 
     </div>
 
