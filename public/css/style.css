@@ -165,8 +165,8 @@
 
 /* footer */
 .footer {
-  width: 100%;
   background: black;
+  width: 100%;
   opacity: 0.7;
   height: 150px;
 }
@@ -580,6 +580,11 @@
   font-weight: bold;
 }
 
+#sup {
+  height: 50px;
+  width: 50px;
+}
+
 #date1 {
   padding-bottom: 20px;
 }
@@ -602,6 +607,10 @@
 
 #validation {
   padding-bottom: 20px;
+}
+
+.poubelle {
+  padding-top: 30px;
 }
 
 /* pages sortiesencours */
@@ -669,10 +678,5 @@
 .nontrouve h1 {
   text-align: center;
   font-size: 25px;
-}
-
-#sup {
-  height: 50px;
-  width: 50px;
 }
 /*# sourceMappingURL=style.css.map */

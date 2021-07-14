@@ -41,7 +41,16 @@
 </div>
 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 <div class="boutonmodif">
-<a href="{{ path('dashboardsortiesencours') }}"> <button type="submit" class="btn btn-primary"> Modifier </button> </a>
+<a href="{{ path('dashboardsortiesencours')}}"> <button type="submit" class="btn btn-primary"> Modifier </button> </a>
+</div>
+
+<div class="poubelle">
+<form method="post" action="{{ path('supprimersortie', {'id': sortie.id}) }}">
+<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sortie.id) }}">
+<a href="{{ path('dashboardsortiesencours')}}"> <img src="{{ asset('images/icons-supprimer.png')}}" id="sup"> </a>
+</form>
+</div>
+
 {{ form_end(form) }}
 </div>
 </div>

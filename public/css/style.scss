@@ -15,6 +15,7 @@
     display : flex ;
     justify-content : center ;
     flex-direction : row;
+
     }
 
     nav ul {
@@ -88,6 +89,7 @@
 
     height: 600px ;
     width: 600px ;
+
     }
 
 }
@@ -195,11 +197,11 @@
 
 .footer {
 
-    width : 100% ;
-    background : black ;
-    opacity : 0.7 ;
+    background: black ;
+    width: 100% ;
+    opacity: 0.7 ;
     height: 150px ;
-
+    
 
     nav {
 
@@ -210,6 +212,7 @@
     justify-content : center ;
     flex-direction : row;
     align-items: center;
+
     }
 
     nav ul {
@@ -680,6 +683,13 @@
 
 }
 
+#sup {
+
+    height: 50px;
+    width: 50px;
+
+}
+
 
 #date1 {
 
@@ -714,6 +724,12 @@
 #validation {
 
     padding-bottom: 20px;
+
+}
+
+.poubelle {
+
+    padding-top: 30px;
 
 }
 
@@ -802,10 +818,5 @@
     }
 }
 
-#sup {
 
-    height: 50px;
-    width: 50px;
-
-}
 

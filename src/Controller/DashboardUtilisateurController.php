@@ -85,7 +85,7 @@ class DashboardUtilisateurController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * @Route("/dashboard/modificationsortie/{id}", name="modificationsortie", methods={"GET","POST"})
      */
     public function edit(Request $request, Sortie $sortie): Response
@@ -105,6 +105,19 @@ class DashboardUtilisateurController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/{id}", name="supprimersortie", methods={"POST"})
+     */
+    public function delete(Request $request, Sortie $sortie): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$sortie->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($sortie);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('dashboardsortiesencours', [], Response::HTTP_SEE_OTHER);
+    }
 
     /**
      * @Route("/dashboard/messages", name="dashboardmessages")
