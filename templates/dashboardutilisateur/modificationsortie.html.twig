@@ -4,61 +4,81 @@
 {% block body %}
 
 
-<div class="liens">
+	<div class="liens">
 
-<a href="{{ path('presentation') }}"> Retour à la page d'accueil </a>
-<a href="{{ path('app_logout') }}"> Deconnexion </a>
+		<a href="{{ path('presentation') }}">
+			Retour à la page d'accueil
+		</a>
+		<a href="{{ path('app_logout') }}">
+			Deconnexion
+		</a>
 
-</div>
+	</div>
 
-<div class="container5">
+	<div class="container5">
 
-<div class="modifsortie">
-<h1> Modifier la sortie </h1>
+		<div class="modifsortie">
+			<h1>
+				Modifier la sortie
+			</h1>
 
-<div class="container6">
-<div class="formulairemodif">
-{{ form_start(form) }}
-<div id="date1">
-<p> Date </p>
-{{ form_widget(form.date, {'attr': {'placeholder': 'Date de la sortie', 'size':'50'}}) }}
-</div>
-<div id="ville1">
-<p> Ville </p>
-{{ form_widget(form.ville, {'attr': {'placeholder': 'Lieu de la sortie (ville)', 'size':'50'}}) }}
-</div>
-<div id="adresse1">
-<p> Adresse </p>
-{{ form_widget(form.adresse, {'attr': {'placeholder': 'Lien de lillustration', 'size':'50'}}) }}
-</div>
-<div id="image1">
-<p> Image </p>
-{{ form_widget(form.image, {'attr': {'placeholder': 'Adresse de la sortie', 'size':'50'}}) }}
-</div>
-<div id="description1">
-<p> Description </p>
-{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'size':'200'}}) }}
-</div>
-<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-<div class="boutonmodif">
-<a href="{{ path('dashboardsortiesencours')}}"> <button type="submit" class="btn btn-primary"> Modifier </button> </a>
-</div>
+			<div class="container6">
+				<div class="formulairemodif">
+					{{ form_start(form) }}
+					<div id="date1">
+						<p>
+							Date
+						</p>
+						{{ form_widget(form.date, {'attr': {'placeholder': 'Date de la sortie', 'size':'50'}}) }}
+					</div>
+					<div id="ville1">
+						<p>
+							Ville
+						</p>
+						{{ form_widget(form.ville, {'attr': {'placeholder': 'Lieu de la sortie (ville)', 'size':'50'}}) }}
+					</div>
+					<div id="adresse1">
+						<p>
+							Adresse
+						</p>
+						{{ form_widget(form.adresse, {'attr': {'placeholder': 'Lien de lillustration', 'size':'50'}}) }}
+					</div>
+					<div id="image1">
+						<p>
+							Image
+						</p>
+						{{ form_widget(form.image, {'attr': {'placeholder': 'Adresse de la sortie', 'size':'50'}}) }}
+					</div>
+					<div id="description1">
+						<p>
+							Description
+						</p>
+						{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'size':'200'}}) }}
+					</div>
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					<div class="boutonmodif">
+						<a href="{{ path('dashboardsortiesencours')}}">
+							<button type="submit" class="btn btn-primary">
+								Modifier
+							</button>
+						</a>
+					</div>
 
-<div class="poubelle">
-<form method="post" action="{{ path('supprimersortie', {'id': sortie.id}) }}">
-<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sortie.id) }}">
-<a href="{{ path('dashboardsortiesencours')}}"> <img src="{{ asset('images/icons-supprimer.png')}}" id="sup"> </a>
-</form>
-</div>
+					<div class="poubelle">
+						<form method="post" action="{{ path('supprimersortie', {'id': sortie.id}) }}">
+							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sortie.id) }}">
+							<a href="{{ path('dashboardsortiesencours')}}">
+								<img src="{{ asset('images/icons-supprimer.png')}}" id="sup">
+							</a>
+						</form>
+					</div>
 
-{{ form_end(form) }}
-</div>
-</div>
+					{{ form_end(form) }}
+				</div>
+			</div>
 
-</div>
+		</div>
 
-</div>
+	</div>
 
-</div>
-
-{% endblock %}
+</div>{% endblock %}

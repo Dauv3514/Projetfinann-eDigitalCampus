@@ -1,0 +1,78 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+
+	<section class="sorties">
+
+		<h1>
+			Proposition de sorties des membres
+		</h1>
+
+		<div class="propositionsortie">
+			<div class="propositionsortiecentre">
+				<div class="proposmembres">
+					<p>
+						Tu peux aussi proposer une sortie aux membres via ton dashboard en cliquant ici !
+					</p>
+				</div>
+				<div class="proposmembres2">
+					<a href="{{ path('dashboard') }}">
+						<button type="submit" class="btn btn-primary">
+							Proposer une sortie
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="sortie">
+			<div
+				class="alignement">
+
+
+				{#<div class="appel">
+				{% for user in users %}
+				<h1> {{user.prenom}} </h1>
+				{% endfor %}
+				</div> #}
+
+				<div class="sort">
+					{% for sortie in sorties %}
+						<div class="sor">
+							{{sortie.user.prenom}}
+							<img src="{{sortie.image}}">
+							<p>
+								{{sortie.date}}
+							</p>
+							<p>
+								{{sortie.ville}}</p>
+							<p>
+								{{sortie.description}}
+							</p>
+							<div class="message">
+								<a href="{{ path('dashboardmessages') }}">
+									<button type="submit" class="btn btn-danger">
+										Envoyer un message à ...
+										{{sortie.user.prenom}}
+									</button>
+								</a>
+							</div>
+							<div class='accepte'>
+								<a href="{{ path('acceptesortie', { 'id': sortie.id })}}">
+									<button type="submit" class="btn btn-primary">
+										Accepter la sortie
+									</button>
+								</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+
+
+		</div>
+
+
+	</section>
+
+{% endblock %}

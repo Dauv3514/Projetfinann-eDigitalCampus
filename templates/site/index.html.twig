@@ -2,47 +2,63 @@
 
 {% block body %}
 
-<div class="presentation">
+	<div class="presentation">
 
-<div class="accompagne">
-<div class="image1">
-<img src="images/basket.png">
-</div>
+		<div class="accompagne">
+			<div class="image1">
+				<img src="images/basket.png">
+			</div>
 
-<div class="textepres1">
-<h1> Accompagné </h1>
-<p>Je suis une personne en situation de handicap  
-qui souhaite trouver une personne pour
-l’accompagner dans une activité 
-(balade, sorties, voyages etc..)
-</p>  
-<a href="{{ path('connexion') }}"> <button type="submit" class="btn btn-primary"> Proposer une sortie </button> </a> 
-</div>
-</div>
+			<div class="textepres1">
+				<h1>
+					Accompagné
+				</h1>
+				<p>Je suis une personne en situation de handicap  
+					qui souhaite trouver une personne pour
+					l’accompagner dans une activité 
+					(balade, sorties, voyages etc..)
+				</p>
+				<a href="{{ path('connexion') }}">
+					<button type="submit" class="btn btn-primary">
+						Proposer une sortie
+					</button>
+				</a>
+			</div>
+		</div>
 
-<div class="accompagnant">
+		<div class="accompagnant">
 
-<div class="textepres2">
-<h1> Accompagnant </h1>
-<p>Je suis un étudiant, retraité, actif ayant du temps 
-à donner afin d’accompagner une personne en situation 
-de handicap lors d’une activité
-</p>
-<a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-primary"> Voir les sorties proposées par les membres  </button> </a> 
+			<div class="textepres2">
+				<h1>
+					Accompagnant
+				</h1>
+				<p>Je suis un étudiant, retraité, actif ayant du temps 
+					à donner afin d’accompagner une personne en situation 
+					de handicap lors d’une activité
+				</p>
+				<a href="{{ path('sorties') }}">
+					<button type="submit" class="btn btn-primary">
+						Voir les sorties proposées par les membres
+					</button>
+				</a>
 
-</div>
-<div class="image2">
-<img src="images/photo.png">
-</div>
+			</div>
+			<div class="image2">
+				<img src="images/photo.png">
+			</div>
 
-</div>
+		</div>
 
-</div>
+	</div>
 
-<div class="inscrire">
+	<div class="inscrire">
 
-<a href="{{ path('inscription') }}"> <button type="submit" class="btn btn-danger"> Rejoindre Handi'ACC </button> </a>
+		<a href="{{ path('inscription') }}">
+			<button type="submit" class="btn btn-danger">
+				Rejoindre Handi'ACC
+			</button>
+		</a>
 
-</div>
+	</div>
 
 {% endblock %}

@@ -1,66 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="{{asset('css/style.css')}}">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Merriweather+Sans:wght@300&family=Merriweather:wght@300&family=Nunito+Sans:wght@300&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Merriweather+Sans:wght@300&family=Merriweather:wght@300&family=Nunito+Sans:wght@300&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
-        <style>
-        body {
+		<style>
+			body {
 
-        font-family: 'Merriweather Sans', sans-serif;
+				font-family: 'Merriweather Sans', sans-serif;
 
-        }
-        </style>
-    </head>
+			}
+		</style>
+	</head>
 
-    <body>
+	<body>
 
-<div class="navbar">
-    <nav>
-        <ul>
-        <li> <a href="{{ path('presentation') }}"> Accueil </a></li>
-        <li> <a href="{{ path('concept2') }}">  Le concept </a></li>
-        <li> <a href="{{ path('sorties2') }}">  Les sorties </a></li>
-        <li> <a href="{{ path('presentation') }}" class="button">
-                <img src="images/logo handi'acc.png" alt="Logo du site" />
-        </a></li>
-        <li> <a href="{{ path('dashboard') }}"> Mon Dashboard </a></li>
-        <li> <a href="{{ path('app_logout') }}"> Déconnexion </a></li>
-        </ul>     
-    </nav>
-</div>
+		<div class="navbar">
+			<nav>
+				<ul>
+					<li><ahref="{{ path('presentation') }}">Accueil</a></li>
+					<li><ahref="{{ path('leconcept') }}">Le concept</a></li>
+					<li><ahref="{{ path('lessorties') }}">Les sorties</a></li>
+					<li><ahref="{{ path('presentation') }}" class="button"><img src="images/logo handi'acc.png" alt="Logo du site"/></a></li>
+					<li><ahref="{{ path('dashboard') }}">Mon Dashboard</a></li>
+					<li><ahref="{{ path('app_logout') }}">Déconnexion</a></li>
+				</ul>
+			</nav>
+		</div>
 
-        {% block body %}
-    
-        
-        {% endblock %}
+		{% block body %}{% endblock %}
 
-            <div class="footer">
-      <nav>
-        <ul>
-          <li> <a href="{{ path('accueil') }}"> CGV </a></li>
-          <li> <a href="{{ path('concept') }}">  CGU </a></li>
-          <li> <a href="{{ path('sorties') }}">  Contact </a></li>
-          <li> <a href="{{ path('accueil') }}" class="button">
-                <img src="images/Instagram.png" alt="Réseaux Sociaux" />
-          </a></li>
-          <li> <a href="{{ path('accueil') }}" class="button">
-                <img src="images/facebook.png" alt="Réseaux Sociaux" />
-          </a></li>
-          
-        </ul>     
-      </nav>
-    </div>
+		<div class="footer">
+			<nav>
+				<ul>
+					<li><ahref="{{ path('accueil') }}">CGV</a></li>
+					<li><ahref="{{ path('concept') }}">CGU</a></li>
+					<li><ahref="{{ path('sorties') }}">Contact</a></li>
+					<li><ahref="{{ path('accueil') }}" class="button"><img src="images/Instagram.png" alt="Réseaux Sociaux"/></a></li>
+					<li><ahref="{{ path('accueil') }}" class="button"><img src="images/facebook.png" alt="Réseaux Sociaux"/></a></li>
 
-    
-    </body>
+				</ul>
+			</nav>
+		</div>
+
+
+	</body>
 </html>

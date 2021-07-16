@@ -2,23 +2,29 @@
 
 {% block body %}
 
-<div class="bienvenue"> 
+	<div class="bienvenue">
 
-<h1> Bienvenue sur votre Dashboard : {{app.user.prenom}} {{app.user.nom}} </h1>
-{{app.user.id}}
+		<h1>
+			Bienvenue sur votre Dashboard :
+			{{app.user.prenom}}
+			{{app.user.nom}}
+		</h1>
+		{{app.user.id}}
 
-<p> Rôles </p>
+		<p>
+			Rôles
+		</p>
 
-{% for role in app.user.roles %}
-{{role}}
-{% endfor %}
+		{% for role in app.user.roles %}
+			{{role}}
+		{% endfor %}
 
-</div>
+	</div>
 
-<div class="illustration">
+	<div class="illustration">
 
-<img src="images/tiralarc.jpg">
+		<img src="images/tiralarc.jpg">
 
-</div>
+	</div>
 
 {% endblock %}

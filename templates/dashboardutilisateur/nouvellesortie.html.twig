@@ -1,32 +1,39 @@
 {% extends 'basesidebar.html.twig' %}
 
-{% block title %}Hello SiteController!{% endblock %}
+{% block title %}Hello SiteController!
+{% endblock %}
 
 {% block body %}
 
 <div class="liens">
 
-<a href="{{ path('presentation') }}"> Retour à la page d'accueil </a>
-<a href="{{ path('app_logout') }}"> Deconnexion </a>
+	<a href="{{ path('presentation') }}">
+		Retour à la page d'accueil
+	</a>
+	<a href="{{ path('app_logout') }}">
+		Deconnexion
+	</a>
 
 </div>
 
 <div class="container3">
 
-<div class="ajoutsortie">
-<h1> Ajouter une nouvelle sortie </h1>
+	<div class="ajoutsortie">
+		<h1>
+			Ajouter une nouvelle sortie
+		</h1>
 
-<div class="container4">
-<div class="formulaireajout">
-{{ form_start(form) }}
-<div id="date1">
-{{ form_widget(form.date, {'attr': {'placeholder': 'Date de la sortie', 'size':'50'}}) }}
-</div>
-<div id="ville1">
-{{ form_widget(form.ville, {'attr': {'placeholder': 'Lieu de la sortie (ville)', 'size':'50'}}) }}
-</div>
-<div id="adresse1">
-{{ form_widget(form.adresse, {'attr': {'placeholder': 'Lien de l\'illustration', 'size':'50'}}) }}
+		<div class="container4">
+			<div class="formulaireajout">
+				{{ form_start(form) }}
+				<div id="date1">
+					{{ form_widget(form.date, {'attr': {'placeholder': 'Date de la sortie', 'size':'50'}}) }}
+				</div>
+				<div id="ville1">
+					{{ form_widget(form.ville, {'attr': {'placeholder': 'Lieu de la sortie (ville)', 'size':'50'}}) }}
+				</div>
+				<div id="adresse1">
+		{{ form_widget(form.adresse, {'attr': {'placeholder': 'Lien de l\'illustration', 'size':'50'}}) }}
 </div>
 <div id="image1">
 {{ form_widget(form.image, {'attr': {'placeholder': 'Adresse de la sortie (rue)', 'size':'50'}}) }}

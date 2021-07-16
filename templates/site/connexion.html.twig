@@ -2,85 +2,88 @@
 
 {% block body %}
 
-<div class="axe">
+	<div class="axe">
 
-<div class="connexion">
+		<div class="connexion">
 
 
-{# {% if app.user %} #}
-    {# <div class="mb-3"> #}
-            {# Tu es connecté avec {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a> #}
-        {# </div> #}
-    {# {% endif %} #}
+			{# {% if app.user %} #}
+			{# <div class="mb-3"> #}
+			{# Tu es connecté avec {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a> #}
+			{# </div> #}
+			{# {% endif %} #}
 
-    <div class="logosite">
-    <a href="{{ path('accueil') }}" class="button">
-        <img src="images/logo handi'acc.png" alt="Logo du site" />
-    </a>
-    </div>
+				<div class="logosite"> <a href="{{ path('accueil') }}" class="button">
+					<img src="images/logo handi'acc.png" alt="Logo du site"/>
+				</a>
+			</div>
 
-    <h1 class="h3 mb-3 font-weight-normal"> Se connecter </h1>
+			<h1 class="h3 mb-3 font-weight-normal">
+				Se connecter
+			</h1>
 
-    <div class="container">
+			<div class="container">
 
-    <div class="milieu2">
+				<div class="milieu2">
 
-    <form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-    
-    <div class="adresseemail">
-    
-    <input type="email" name="email" size="30" id="inputEmail" class="form" autocomplete="email" placeholder="Email" required autofocus>
+					<form method="post">
+						{% if error %}
+							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+						{% endif %}
 
-    </div>
+						<div class="adresseemail">
 
-    <div class="motdepasse">
-    
-    <input type="password" size="30" name="password" id="inputPassword" class="form" autocomplete="current-password" placeholder="Mot de passe" required>
+							<input type="email" name="email" size="30" id="inputEmail" class="form" autocomplete="email" placeholder="Email" required autofocus>
 
-    <input type="hidden" name="_csrf_token"
-        value="{{ csrf_token('authenticate') }}"
-    >
+						</div>
 
-    </div>
-    
-    <div class="motdepasseoublie">
+						<div class="motdepasse">
 
-    <a href="{{ path('dashboard') }}">  Mot de passe oublié ?  </a> 
+							<input type="password" size="30" name="password" id="inputPassword" class="form" autocomplete="current-password" placeholder="Mot de passe" required>
 
-    </div> 
+							<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+						</div>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
+						<div class="motdepasseoublie">
 
-    <button class="btn btn-lg btn-danger" type="submit">
-    Connexion
-    </button>
+							<a href="{{ path('dashboard') }}">
+								Mot de passe oublié ?
+							</a>
 
-    </div>
+						</div>
 
-    </div>
+						{#
+						        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+						        See https://symfony.com/doc/current/security/remember_me.html
+						
+						        <div class="checkbox mb-3">
+						            <label>
+						                <input type="checkbox" name="_remember_me"> Remember me
+						            </label>
+						        </div>
+						    #}
 
-    </div>
+						<button class="btn btn-lg btn-danger" type="submit">
+							Connexion
+						</button>
 
-    </div>
+					</div>
 
-    <div class="pasdecompte">
-    <p> Vous n'avez pas de compte ? </p>
-    <a href="{{ path('inscription') }}"> Je m'inscris ! </a>
-    </div>
-</form>
+				</div>
 
-</div>
+			</div>
 
-{% endblock %}
+		</div>
+
+		<div class="pasdecompte">
+			<p>
+				Vous n'avez pas de compte ?
+			</p>
+			<a href="{{ path('inscription') }}">
+				Je m'inscris !
+			</a>
+		</div>
+	</form>
+
+</div>{% endblock %}

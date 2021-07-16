@@ -85,19 +85,19 @@ class SiteController extends AbstractController
 
 
     /**
-     * @Route("/concept2", name="concept2")
+     * @Route("/leconcept", name="leconcept")
      */
-    public function concept2(): Response
+    public function leconcept(): Response
     {
-        return $this->render('site/concept2.html.twig', [
+        return $this->render('site/leconcept.html.twig', [
             'controller_name' => 'SiteController',
         ]);
     }
 
     /**
-     * @Route("/sorties2", name="sorties2")
+     * @Route("/lessorties", name="lessorties")
      */
-    public function sorties2(): Response
+    public function lessorties(): Response
     {
         //affiche mes données sur la page
         $repo=$this->getDoctrine()->getRepository(Sortie::class);
@@ -107,14 +107,14 @@ class SiteController extends AbstractController
         $users = $repository->findAll();
 
 
-        return $this->render('site/sorties2.html.twig', [
+        return $this->render('site/lessorties.html.twig', [
             'sorties'=>$sorties,
             'users'=>$users,
         ]);
     }
 
     /**
-     * @Route("/sorties2/{id}", name="acceptesortie", methods={"GET"})
+     * @Route("/lessorties/{id}", name="acceptesortie", methods={"GET"})
      */
     public function acceptesortie(Sortie $sortie): Response
     {
@@ -128,7 +128,7 @@ class SiteController extends AbstractController
         $entityManager->persist($presence);
         $entityManager->flush();
 
-        return $this->redirectToRoute('sorties2');
+        return $this->redirectToRoute('lessorties');
 
     }
 
