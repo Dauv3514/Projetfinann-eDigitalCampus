@@ -1,63 +1,73 @@
 {% extends 'style.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Register
+{% endblock %}
 
 {% block body %}
 
-    <div class="inscriptionsite">
-    <div class="logosite">
-    <a href="{{ path('accueil') }}" class="button">
-    <img src="images/logo handi'acc.png" alt="Logo du site" />
-    </a>
-    </div>
-    <h1> Créer votre compte </h1>
+	<div class="inscriptionsite">
+		<div class="logosite">
+			<a href="{{ path('accueil') }}" class="button">
+				<img src="images/logo handi'acc.png" alt="Logo du site"/>
+			</a>
+		</div>
+		<h1>
+			Créer votre compte
+		</h1>
 
-    <div class="inscription">
+		<div class="inscription">
 
-        <div class="container2">
+			<div class="container2">
 
-        {{ form_start(registrationForm, {'attr': {'id': 'new_edit_utilisateur'}}) }}
+				{{ form_start(registrationForm, {'attr': {'id': 'new_edit_utilisateur'}}) }}
 
-        <div id="email">
-        {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Adresse email', 'size':'30'}
+				<div id="email">
+					{{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Adresse email', 'size':'30'}
         }) }}
-        </div>
-        <div id="prenom">
-        {{ form_widget(registrationForm.prenom, {'attr': {'placeholder': 'Prenom', 'size':'30'}}) }}
-        </div>
-        <div id="nom">
-        {{ form_widget(registrationForm.nom, {'attr': {'placeholder': 'Nom', 'size':'30'}}) }}
-        </div>
-        <div id="avatar">
-        {{ form_widget(registrationForm.avatar,{'attr': {'placeholder': 'Avatar', 'size':'30'}}) }}
-        </div>
-        <div id="motdepasse">
-        {{ form_widget(registrationForm.plainPassword,{'attr': {'id':'mon_mp', 'placeholder': 'Mot de Passe', 'size':'30'}})}}
-        </div>
-    {#  <div id="verifmotdepasse">          
-        <input type="password" id="verifpass" placeholder="Saisir une seconde fois le mot de passe" size="30" =required>
-        </div> #}
-        
+				</div>
+				<div id="prenom">
+					{{ form_widget(registrationForm.prenom, {'attr': {'placeholder': 'Prenom', 'size':'30'}}) }}
+				</div>
+				<div id="nom">
+					{{ form_widget(registrationForm.nom, {'attr': {'placeholder': 'Nom', 'size':'30'}}) }}
+				</div>
+				<div id="avatar">
+					{{ form_widget(registrationForm.avatar,{'attr': {'placeholder': 'Avatar', 'size':'30'}}) }}
+				</div>
 
-        <div id="validation">
-        {{ form_row(registrationForm.validation) }}
-        </div>
-        
-        <button type="submit" class="btn btn-danger"> Créer un compte </button>
-    
-        </div>
+				<div id="motdepasse">
+					{{ form_widget(registrationForm.plainPassword,{'attr': {'id':'mon_mp', 'placeholder': 'Mot de Passe', 'size':'30'}})}}
+				</div>
 
-        {{ form_end(registrationForm) }}
+				{# <div id="verifmotdepasse">          
+				<input type="password" id="verifpass" placeholder="Saisir une seconde fois le mot de passe" size="30" =required>
+				</div> #}
 
 
-    </div>
+				<div id="validation">
+					{{ form_row(registrationForm.validation) }}
+				</div>
 
-        <div class="compte">
-        <p> Vous avez un compte ? </p>
-        <a href="{{ path('connexion') }}"> Connectez-vous ! </a>
-        </div>      
+				<button type="submit" class="btn btn-danger">
+					Créer un compte
+				</button>
 
-    </div>
+			</div>
+
+			{{ form_end(registrationForm) }}
+
+
+		</div>
+
+		<div class="compte">
+			<p>
+				Vous avez un compte ?
+			</p>
+			<a href="{{ path('connexion') }}">
+				Connectez-vous !
+			</a>
+		</div>
+
+	</div>
 
 {% endblock %}
-

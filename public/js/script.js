@@ -6,3 +6,5 @@ $("#new_edit_utilisateur").on('submit', function(){
         return false;
     }
 })
+
+
