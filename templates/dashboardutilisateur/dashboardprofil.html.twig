@@ -5,8 +5,15 @@
 
 {% block body %}
 
-	<h1>
-		Profil
-	</h1>
+<div class="liens">
+
+		<a href="{{ path('presentation') }}">
+			Retour à la page d'accueil
+		</a>
+		<a href="{{ path('app_logout') }}">
+			Deconnexion
+		</a>
+
+</div>
 
 {% endblock %}

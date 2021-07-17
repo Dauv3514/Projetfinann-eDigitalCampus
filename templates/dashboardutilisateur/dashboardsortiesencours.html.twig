@@ -8,6 +8,16 @@
 
 	<div class="e2">
 		<div class="milieu2">
+			<div class="liens">
+
+				<a href="{{ path('presentation') }}">
+					Retour à la page d'accueil
+				</a>
+				<a href="{{ path('app_logout') }}">
+					Deconnexion
+				</a>
+
+			</div>
 			<div class="boutajout">
 				{{app.user.email}}
 				<a href="{{ path('nouvellesortie')}}">
@@ -28,10 +38,10 @@
 			class="alignement2">
 
 			{#<div class="appel2">
-			{% for user in users %} 
-			<h1> {{user.prenom}} </h1> 
-			{% endfor %} 
-			</div>#}
+						{% for user in users %} 
+						<h1> {{user.prenom}} </h1> 
+						{% endfor %} 
+						</div>#}
 
 
 			<div class="sort2">

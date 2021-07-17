@@ -39,16 +39,13 @@
 				<div class="sort">
 					{% for sortie in sorties %}
 						<div class="sor">
+							<div class="prenom">
 							{{sortie.user.prenom}}
+							<div>
 							<img src="{{sortie.image}}">
-							<p>
-								{{sortie.date}}
-							</p>
-							<p>
-								{{sortie.ville}}</p>
-							<p>
-								{{sortie.description}}
-							</p>
+							<p>{{sortie.date}}</p>
+							<p>{{sortie.ville}}</p>
+							<p>{{sortie.description}}</p>
 							<div class="message">
 								<a href="{{ path('dashboardmessages') }}">
 									<button type="submit" class="btn btn-danger">

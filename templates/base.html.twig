@@ -29,28 +29,29 @@
 		<div class="navbar">
 			<nav>
 				<ul>
-					<li><ahref="{{ path('accueil') }}">Accueil</a></li>
-					<li><ahref="{{ path('concept') }}">Le concept</a></li>
-					<li><ahref="{{ path('sorties') }}">Les sorties</a></li>
-					<li><ahref="{{ path('accueil') }}" class="button"><img src="images/logo handi'acc.png" alt="Logo du site"/></a></li>
-					<li><ahref="{{ path('connexion') }}">Connexion</a></li>
-					<li><ahref="{{ path('inscription') }}">Inscription</a></li>
+					<li><a href="{{ path('accueil') }}">Accueil</a></li>
+					<li><a href="{{ path('concept') }}">Le concept</a></li>
+					<li><a href="{{ path('sorties') }}">Les sorties</a></li>
+					<li><a href="{{ path('accueil') }}" class="button"><img src="images/logo handi'acc.png" alt="Logo du site"/></a></li>
+					<li><a href="{{ path('connexion') }}">Connexion</a></li>
+					<li><a href="{{ path('inscription') }}">Inscription</a></li>
 				</ul>
 			</nav>
 		</div>
 
 
-		{% block body %}{% endblock %}
+		{% block body %}
+		{% endblock %}
 
 
 		<div class="footer">
 			<nav>
 				<ul>
-					<li><ahref="{{ path('accueil') }}">CGV</a></li>
-					<li><ahref="{{ path('concept') }}">CGU</a></li>
-					<li><ahref="{{ path('sorties') }}">Contact</a></li>
-					<li><ahref="{{ path('accueil') }}" class="button"><img src="images/Instagram.png" alt="Réseaux Sociaux"/></a></li>
-					<li><ahref="{{ path('accueil') }}" class="button"><img src="images/facebook.png" alt="Réseaux Sociaux"/></a></li>
+					<li><a href="{{ path('accueil') }}">CGV</a></li>
+					<li><a href="{{ path('concept') }}">CGU</a></li>
+					<li><a href="{{ path('sorties') }}">Contact</a></li>
+					<li><a href="{{ path('accueil') }}" class="button"><img src="images/Instagram.png" alt="Réseaux Sociaux"/></a></li>
+					<li><a href="{{ path('accueil') }}" class="button"><img src="images/facebook.png" alt="Réseaux Sociaux"/></a></li>
 
 				</ul>
 			</nav>

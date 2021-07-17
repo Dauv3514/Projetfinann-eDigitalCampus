@@ -88,12 +88,13 @@ class DashboardUtilisateurController extends AbstractController
         $sortie = new Sortie();
         $form = $this->createForm(AjoutsortieType::class, $sortie);
         $form->handleRequest($request);
+    
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($sortie);
             $entityManager->flush();
- 
+
             return $this->redirectToRoute('nouvellesortie');
         }
 
