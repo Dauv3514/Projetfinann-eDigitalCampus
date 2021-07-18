@@ -25,28 +25,30 @@
 			</div>
 		</div>
 
+
+		
 		<div class="sortie">
-			<div
-				class="alignement">
-
-
-				{#<div class="appel">
-				{% for user in users %}
-				<h1> {{user.prenom}} </h1>
-				{% endfor %}
-				</div> #}
+			<div class="alignement">
 
 				<div class="sort">
+
+
 					{% for sortie in sorties %}
+
 						<div class="sor">
 							<div class="prenom">
 							{{sortie.user.prenom}}
-							<div>
+							</div>
 							<img src="{{sortie.image}}">
-							<p>{{sortie.date}}</p>
-							<p>{{sortie.ville}}</p>
-							<p>{{sortie.description}}</p>
-							<div class="message">
+							<p>
+								{{sortie.date}}
+							</p>
+							<p>
+								{{sortie.ville}}</p>
+							<p>
+								{{sortie.description}}
+							</p>
+								<div class="message">
 								<a href="{{ path('dashboardmessages') }}">
 									<button type="submit" class="btn btn-danger">
 										Envoyer un message à ...
