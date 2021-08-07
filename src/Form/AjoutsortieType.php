@@ -16,8 +16,7 @@ class AjoutsortieType extends AbstractType
             ->add('ville')
             ->add('image')
             ->add('adresse')
-            ->add('description')
-            
+            ->add('description')      
             
         ;
     }

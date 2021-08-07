@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\Presence;
 use App\Entity\Sortie;
 use App\Entity\User;
+use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,12 +28,14 @@ class SiteController extends AbstractController
     /**
      * @Route("/concept", name="concept")
      */
-    public function concept(): Response
+    public function concept(ArticleRepository $articleRepository): Response
     {
         return $this->render('site/concept.html.twig', [
-            'controller_name' => 'SiteController',
+            'articles' => $articleRepository->findAll(),
         ]);
     }
+
+
 
     /**
      * @Route("/presentation", name="presentation")
@@ -63,6 +67,25 @@ class SiteController extends AbstractController
     }
 
     /**
+     * @Route("/sorties/{id}", name="acceptesortie", methods={"GET"})
+     */
+    public function acceptesortie(Sortie $sortie): Response
+    {
+
+        $presence = new Presence();
+        $presence->setSorties($sortie);
+        $presence->setUsers($this->getUser());
+        $presence->setValidation(false);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($presence);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('sorties');
+
+    }
+
+    /**
      * @Route("/connexion", name="connexion")
      */
     public function connexion(): Response
@@ -82,54 +105,14 @@ class SiteController extends AbstractController
         ]);
     }
 
-
-
     /**
-     * @Route("/leconcept", name="leconcept")
+     * @Route("/{id}", name="conceptshow", methods={"GET"})
      */
-    public function leconcept(): Response
+    public function conceptshow(Article $articles): Response
     {
-        return $this->render('site/leconcept.html.twig', [
-            'controller_name' => 'SiteController',
+        return $this->render('site/conceptshow.html.twig', [
+            'articles' => $articles,
         ]);
-    }
-
-    /**
-     * @Route("/lessorties", name="lessorties")
-     */
-    public function lessorties(): Response
-    {
-        //affiche mes données sur la page
-        $repo=$this->getDoctrine()->getRepository(Sortie::class);
-        $sorties = $repo->findAll();
-
-        $repository=$this->getDoctrine()->getRepository(User::class);
-        $users = $repository->findAll();
-
-
-        return $this->render('site/lessorties.html.twig', [
-            'sorties'=>$sorties,
-            'users'=>$users,
-        ]);
-    }
-
-    /**
-     * @Route("/lessorties/{id}", name="acceptesortie", methods={"GET"})
-     */
-    public function acceptesortie(Sortie $sortie): Response
-    {
-
-        $presence = new Presence();
-        $presence->setSorties($sortie);
-        $presence->setUsers($this->getUser());
-        $presence->setValidation(false);
-
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($presence);
-        $entityManager->flush();
-
-        return $this->redirectToRoute('lessorties');
-
     }
 
 

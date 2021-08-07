@@ -1,0 +1,10 @@
+<div class="poubelle">
+		<form method="post" action="{{ path('supprimer', {'id': sortie.id}) }}" onsubmit="return confirm('Es-tu sûr de vouloir supprimer cette sortie ?');">
+		<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sortie.id) }}">
+		<a href="{{ path('dashboardsortiesencours')}}">
+        <button class="btn">
+		<img src="{{ asset('images/icons-supprimer.png')}}" id="sup" alt="bouton supprimer la sortie">
+        </button>
+		</a>
+		</form>
+</div>

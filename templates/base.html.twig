@@ -29,12 +29,28 @@
 		<div class="navbar">
 			<nav>
 				<ul>
+
 					<li><a href="{{ path('accueil') }}">Accueil</a></li>
 					<li><a href="{{ path('concept') }}">Le concept</a></li>
 					<li><a href="{{ path('sorties') }}">Les sorties</a></li>
 					<li><a href="{{ path('accueil') }}" class="button"><img src="images/logo handi'acc.png" alt="Logo du site"/></a></li>
+
+					{% if is_granted('ROLE_USER') %}
+
+    {# Ici le contenu réservé aux utilisateurs connectés #}
+				
+					<li><a href="{{ path('dashboard') }}">Mon Dashboard</a></li>
+					<li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+
+					{% else %}
+
+    {# Ici le contenu affiché aux utilisateurs non connectés #}
+
 					<li><a href="{{ path('connexion') }}">Connexion</a></li>
 					<li><a href="{{ path('inscription') }}">Inscription</a></li>
+
+					{% endif %}
+					
 				</ul>
 			</nav>
 		</div>

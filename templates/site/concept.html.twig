@@ -1,12 +1,85 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SiteController!
-{% endblock %}
-
 {% block body %}
 
-	<h1>
-		Concept
-	</h1>
+<div class="concept">
+
+<div id="leconcept">
+
+		<div class="pitch">
+
+				<p> L’été arrive, Yohann, malentendant depuis son enfance aimerait retrouver une vie sociale plus épanouie après avoir vécu une longue période d’isolement lié au Covid19. De part son handicap, Yohann a du mal à nouer du lien avec les autres. Il se demande comment il peut avoir des relations humaines plus régulières.
+
+				Yohann est ouvert à tout type de rencontre, que ce soit avec des personnes en situation de handicap ou des personnes valides. Ce qu’il voudrait surtout, c’est passer des bons moments autour d’une activité qu’il apprécie.
+				
+
+				Il côtoie de temps en temps une association de personnes ayant le même handicap que lui mais il ne peut pas faire l’activité qu’il souhaite, ni la faire quand il veut.
+				Mais Yohann a de la chance, un nouveau site vient d’arriver et pourra lui permettre de trouver un accompagnant pour l’activité qu’il souhaite faire.
+				
+				C’est le but de Handi’Acc, qui est un site d’accompagnements/sorties/rencontres destinées aux personnes en situation de handicap et qui renforce le lien social de ce type de population. </p>
+
+		</div>
+
+		<div class="centre">
+				<h1>
+				Accompagné ou Accompagnant ?
+				</h1>
+				<p>
+				tu souhaites proposer une sortie sur la plateforme ?
+				</p>
+				<p>
+				c'est possible ici !
+				</p>
+				<a href="{{ path('dashboard') }}">
+					<button type="submit" class="btn btn-primary">
+					Proposer une sortie via mon Dashboard
+					</button>
+				</a>
+		</div>
+
+		<div class="titrearticle">
+				<h1>
+					La vie de nos utilisateurs à travers leur handicap
+				</h1>
+		</div>
+
+		<div class="articles">
+
+				{% for article in articles %}
+
+				<div class="art">
+
+							<h2>
+								{{article.titre}}
+							</h2>
+							<div class="articleimage">
+								<img src="{{article.image}}" alt="une personne handicapée">
+							</div>
+							<p>
+								{{article.extrait}}
+							</p>
+							<div class="datearticle">
+								<img src="images/variante-de-calendrier-annuel.png" alt="calendrier">
+								<p>
+								{{ article.datecreationarticle|date('d/m/Y H:i')}}
+								</p>
+							</div>
+							<div class="voirarticle">
+							<a href="{{ path('conceptshow',{'id': article.id })}}">
+								<button type="submit" class="btn btn-dark">
+									Voir l'article
+								</button>
+							</a>
+							</div>			
+
+				</div>
+
+				{% endfor %}
+
+		</div>
+			
+</div>
+
+</div>
 
 {% endblock %}

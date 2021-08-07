@@ -63,19 +63,15 @@
 							</button>
 						</a>
 					</div>
-
-					<div class="poubelle">
-						<form method="post" action="{{ path('modificationsortie', {'id': sortie.id}) }}">
-							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sortie.id) }}">
-							<a href="{{ path('dashboardsortiesencours')}}">
-								<img src="{{ asset('images/icons-supprimer.png')}}" id="sup">
-							</a>
-						</form>
-					</div>
-
 					{{ form_end(form) }}
+
+					
+
 				</div>
+
 			</div>
+
+			{{ include('site/supprimer.html.twig') }}
 
 		</div>
 

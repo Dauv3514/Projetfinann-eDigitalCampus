@@ -20,7 +20,7 @@ class Sortie
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
@@ -80,12 +80,12 @@ class Sortie
         return $this->id;
     }
 
-    public function getDate(): ?string
+    public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
     }
 
-    public function setDate(string $date): self
+    public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
 
@@ -235,4 +235,6 @@ class Sortie
 
         return $this;
     }
+
+
 }

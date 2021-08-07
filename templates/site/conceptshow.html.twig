@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<section id="articles">
+
+	<div class="showarticle">
+
+		<div lass="showcentrage">
+
+			<div class="articletp">
+			<h2>
+				{{articles.titre}}
+			</h2>
+			<img src="{{articles.image}}" alt="photo de la personne">
+			</div>
+			<div class="datearticle">
+				<img src="{{asset('images/variante-de-calendrier-annuel.png')}}" alt="calendrier">
+				<p>
+					{{ articles.datecreationarticle|date('d/m/Y')}}
+				</p>
+			</div>
+
+			<div class="contenuarticle">
+
+			<p> {{articles.contenu}} </p>				
+				
+			</div>
+
+		</div>
+
+	</div>
+
+<section>
+
+{% endblock %}

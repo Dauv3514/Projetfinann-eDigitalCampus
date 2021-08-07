@@ -1,8 +1,5 @@
 {% extends 'basesidebar.html.twig' %}
 
-{% block title %}Hello SiteController!
-{% endblock %}
-
 {% block body %}
 
 <div class="liens">
@@ -33,10 +30,10 @@
 					{{ form_widget(form.ville, {'attr': {'placeholder': 'Lieu de la sortie (ville)', 'size':'50'}}) }}
 				</div>
 				<div id="adresse1">
-					{{ form_widget(form.adresse, {'attr': {'placeholder': 'Lien de l\'illustration', 'size':'50'}}) }}
+					{{ form_widget(form.adresse, {'attr': {'placeholder': 'Adresse de la sortie (rue)', 'size':'50'}}) }}
 				</div>
 				<div id="image1">
-					{{ form_widget(form.image, {'attr': {'placeholder': 'Adresse de la sortie (rue)', 'size':'50'}}) }}
+					{{ form_widget(form.image, {'attr': {'placeholder': 'Lien de l\'illustration', 'size':'50'}}) }}
 				</div>
 				<div id="description1">
 					{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'style':'width: 428px','height':'400px'}}) }}
@@ -45,7 +42,10 @@
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 				<div class="boutonajout">
-				<a href="{{ path('dashboardsortiesencours') }}"> <button type="submit" class="btn btn-primary"> Ajouter </button> </a>
+				<a href="{{ path('dashboardsortiesencours')}}"> 
+				<button type="submit" class="btn btn-primary"> 
+				Ajouter </button> 
+				</a>
 				</div>
 				{{ form_end(form) }}
 			</div>
