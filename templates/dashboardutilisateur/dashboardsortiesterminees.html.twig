@@ -7,12 +7,18 @@
 
 <div class="liens">
 
-		<a href="{{ path('presentation') }}">
+		<a class="retour" href="{{ path('presentation') }}">
 			Retour à la page d'accueil
 		</a>
-		<a href="{{ path('app_logout') }}">
+		<a class="deco" href="{{ path('app_logout') }}">
 			Deconnexion
 		</a>
+
+</div>
+
+<div class="imgutilisateur">
+
+		<img src="{{app.user.avatar}}" alt="profil utilisateur">
 
 </div>
 

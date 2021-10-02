@@ -1,10 +1,21 @@
-$("#new_edit_utilisateur").on('submit', function(){
+/* $("#new_edit_utilisateur").on('submit', function(){
     if($("#mon_mp").val() != $("#verifpass").val()) {
         //implémentez votre code
         alert("Les deux mots de passe saisies sont différents");
         alert("Merci de renouveler l'opération");
         return false;
     }
-})
+});  */
+
+
+let button = document.getElementsByClassName('toggle-button');
+// let barreNavigation = document.getElementsByClassName('navbar');
+
+button.addEventListener('click',(e) =>  {
+
+    console.log(e,'caclique');
+    e.preventDefault();
+
+});
 
 

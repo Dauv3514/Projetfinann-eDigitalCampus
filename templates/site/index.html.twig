@@ -10,30 +10,34 @@
 			</div>
 
 			<div class="textepres1">
+				<div class="cen">
 				<h1>
 					Accompagné
 				</h1>
-				<p>Je suis une personne en situation de handicap  
+				<p>
+					Je suis une personne en situation de handicap  
 					qui souhaite trouver une personne pour
 					l’accompagner dans une activité 
 					(balade, sorties, voyages etc..)
 				</p>
 
-{% if is_granted('ROLE_USER') %}
+				{% if is_granted('ROLE_USER') %}
 
-    {# Ici le contenu réservé aux utilisateurs connectés #}
-				
+					{# Ici le contenu réservé aux utilisateurs connectés #}
 
-{% else %}
 
-    {# Ici le contenu affiché aux utilisateurs non connectés #}
-		<a href="{{ path('connexion') }}">
-					<button type="submit" class="btn btn-primary">
-						Proposer une sortie
-					</button>
-		</a>
+				{% else %}
 
-{% endif %}
+					{# Ici le contenu affiché aux utilisateurs non connectés #}
+					<a href="{{ path('connexion') }}">
+						<button type="submit" class="btn btn-primary">
+							Proposer une sortie
+						</button>
+					</a>
+
+				{% endif %}
+
+				</div>
 
 			</div>
 		</div>
@@ -44,26 +48,26 @@
 				<h1>
 					Accompagnant
 				</h1>
-				<p>Je suis un étudiant, retraité, actif ayant du temps 
+				<p> Je suis un étudiant, retraité, actif ayant du temps 
 					à donner afin d’accompagner une personne en situation 
 					de handicap lors d’une activité
 				</p>
-{% if is_granted('ROLE_USER') %}
+				{% if is_granted('ROLE_USER') %}
 
-    {# Ici le contenu réservé aux utilisateurs connectés #}
-				
+					{# Ici le contenu réservé aux utilisateurs connectés #}
 
-{% else %}
 
-    {# Ici le contenu affiché aux utilisateurs non connectés #}
-		<a href="{{ path('sorties') }}">
-					<button type="submit" class="btn btn-primary">
-						Voir les sorties proposées par les membres
-					</button>
-				</a>
+				{% else %}
 
-{% endif %}
-				
+					{# Ici le contenu affiché aux utilisateurs non connectés #}
+					<a href="{{ path('sorties') }}">
+						<button type="submit" class="btn btn-primary">
+							Voir les sorties proposées <br> par les membres
+						</button>
+					</a>
+
+				{% endif %}
+
 
 			</div>
 			<div class="image2">
@@ -74,44 +78,43 @@
 
 	</div>
 
-    <div class="inscrire">
+	<div class="inscrire">
 
-{% if is_granted('ROLE_USER') %}
+		{% if is_granted('ROLE_USER') %}
 
-    {# Ici le contenu réservé aux utilisateurs connectés #}
+			{# Ici le contenu réservé aux utilisateurs connectés #}
 			<div class="dashboard">
-		<div class="centre">
-			<h1>
-				Accompagné ou Accompagnant ?
-			</h1>
-			<p>
-				tu souhaites proposer une sortie sur la plateforme ?
-			</p>
-			<p>
-				c'est possible ici !
-			</p>
-			<a href="{{ path('dashboard') }}">
-				<button type="submit" class="btn btn-primary">
-					Proposer une sortie via mon Dashboard
+				<div class="centre">
+					<h1>
+						Accompagné ou Accompagnant ?
+					</h1>
+					<p>
+						tu souhaites proposer une sortie sur la plateforme ?
+					</p>
+					<p>
+						c'est possible ici !
+					</p>
+					<a href="{{ path('dashboard') }}">
+						<button type="submit" class="btn btn-primary">
+							Proposer une sortie via mon Dashboard
+						</button>
+					</a>
+				</div>
+			</div>
+
+
+		{% else %}
+
+			{# Ici le contenu affiché aux utilisateurs non connectés #}
+			<a href="{{ path('inscription') }}">
+				<button type="submit" class="btn btn-danger">
+					Rejoindre Handi'ACC
 				</button>
 			</a>
-		</div>
-	</div>
-				
 
-{% else %}
-
-    {# Ici le contenu affiché aux utilisateurs non connectés #}
-			<a href="{{ path('inscription') }}">
-			<button type="submit" class="btn btn-danger">
-				Rejoindre Handi'ACC
-			</button>
-		</a>
-
-{% endif %}
+		{% endif %}
 
 	</div>
-
 
 
 {% endblock %}

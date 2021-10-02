@@ -1,81 +1,84 @@
 {% extends 'basesidebar.html.twig' %}
 
-{% block title %}Hello SiteController!
-{% endblock %}
-
 {% block body %}
 
+	<div class="liens">
 
-	<div class="e2">
-		<div class="milieu2">
-			<div class="liens">
+			<a class="retour" href="{{ path('presentation') }}">
+				Retour à la page d'accueil
+			</a>
+			<a class="deco" href="{{ path('app_logout') }}">
+				Deconnexion
+			</a>
 
-				<a href="{{ path('presentation') }}">
-					Retour à la page d'accueil
-				</a>
-				<a href="{{ path('app_logout') }}">
-					Deconnexion
-				</a>
-
-			</div>
-			<div class="boutajout">
-				{{app.user.email}}
-				<a href="{{ path('nouvellesortie')}}">
-					<button type="submit" class="btn btn-primary">
-						Ajouter une sortie
-					</button>
-				</a>
-				<h1>
-					Mes propositions de sorties en cours (accompagnant trouvé)
-				</h1>
-			</div>
-		</div>
 	</div>
 
+	<div class="imgutilisateur">
 
-	<div class="sortie2">
-		<div
-			class="alignement2">
+			<img src="{{app.user.avatar}}" alt="profil utilisateur">
 
-			{#<div class="appel2">
-						{% for user in users %} 
-						<h1> {{user.prenom}} </h1> 
-						{% endfor %} 
-						</div>#}
+	</div>
+
+	<div class="encours">
+		<div class="centrecontainer">
+		<div class="milieucontainer">
 
 
-			<div class="sort2">
-				{% for sortie in app.user.sorties %}
-					<div class="sor2">
-						<img src="{{sortie.image}}" alt="illustration d'une sortie">
-						<p>
-							Le {{sortie.date |date('d/m/Y')}}
-							à {{sortie.date |date('H:i')}}							
-						</p>
-						<p>
-							{{sortie.ville}}</p>
-						<p>
-							{{sortie.description}}
-						</p>
-						<a href="{{ path('modificationsortie', { 'id': sortie.id })}}">
-							<button type="submit" class="btn btn-primary">
-								Modifier la sortie
-							</button>
-						</a>
-						<div class="message">{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
+		<div class="sortie2">
+			<div class="alignement2">
+				<div class="sort2">
+				<div class="accompagnanttrouve">
+				<div class="boutajout">
+					<a href="{{ path('nouvellesortie')}}">
+						<button type="submit" class="btn btn-dark">
+							Ajouter une sortie
+						</button>
+					</a>
+					<h1>
+						Mes propositions de sorties en cours (accompagnant trouvé)
+					</h1>
+				</div>
+				</div>
+					{% for sortie in app.user.sorties %}
+						<div class="sor2">
+							<img src="{{sortie.image}}" alt="illustration d'une sortie">
+							<p>
+								Le
+								{{sortie.date |date('d/m/Y')}}
+								à
+								{{sortie.date |date('H:i')}}
+							</p>
+							<p>
+								{{sortie.ville}}</p>
+							<p>
+								{{sortie.description}}
+							</p>
+							<a href="{{ path('modificationsortie', { 'id': sortie.id })}}">
+								<button type="submit" class="btn btn-primary">
+									Modifier la sortie
+								</button>
+							</a>
+							<div
+								class="message">{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
+							</div>
+
+
 						</div>
+					{% endfor %}
+				</div>
 
-
-					</div>
-				{% endfor %}
 			</div>
+
+			<div class="nontrouve">
+
+				<h1>
+					Mes propositions de sorties en cours (accompagnant non trouvé)
+				</h1>
+
+			</div>
+			</div>
+
 		</div>
-
-		<div class="nontrouve">
-
-			<h1>
-				Mes propositions de sorties en cours (accompagnant non trouvé)
-			</h1>
 
 		</div>
 

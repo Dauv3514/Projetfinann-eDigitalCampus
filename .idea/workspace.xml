@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="084f562b-cb4e-48fc-8e64-2e78aafbe9af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/projetfin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projetfin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +9,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -187,6 +186,9 @@
       <updated>1625477370489</updated>
       <workItem from="1625477372651" duration="40000" />
       <workItem from="1626763112224" duration="6969000" />
+      <workItem from="1628511539552" duration="1020000" />
+      <workItem from="1629923752514" duration="1044000" />
+      <workItem from="1631391993625" duration="63000" />
     </task>
     <servers />
   </component>

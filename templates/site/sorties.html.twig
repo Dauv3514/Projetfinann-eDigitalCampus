@@ -2,21 +2,23 @@
 
 {% block body %}
 
-	<section class="sorties">
+	<section class="sorties2">
 
-		<h1>
-			Proposition de sorties des membres
-		</h1>
+		<div class="proposersortie">
+
+		<div class="titreproposition">
+			<h1> Proposition de sorties des membres </h1>
+		</div>
 
 		<div class="propositionsortie">
-			<p>
-				Tu peux aussi proposer une sortie aux membres via ton dashboard en cliquant ici !
-			</p>
+			<p> Tu peux aussi proposer une sortie aux membres via ton dashboard en cliquant ici ! </p>
 			<a href="{{ path('connexion') }}">
-				<button type="submit" class="btn btn-primary">
+				<button type="submit" class="btn btn-dark">
 					Proposer une sortie
 				</button>
 			</a>
+		</div>
+
 		</div>
 
 		<div class="sortie">
@@ -48,7 +50,7 @@
 								<div class="message">
 									<a href="{{ path('dashboardmessages') }}">
 										<button type="submit" class="btn btn-danger">
-											Envoyer un message à ...
+											Envoyer un message à 
 											{{sortie.user.prenom}}
 										</button>
 									</a>
@@ -84,7 +86,6 @@
 
 
 		</div>
-
 
 	</section>
 
