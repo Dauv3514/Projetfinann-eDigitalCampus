@@ -75,7 +75,7 @@ class SiteController extends AbstractController
         $presence = new Presence();
         $presence->setSorties($sortie);
         $presence->setUsers($this->getUser());
-        $presence->setValidation(false);
+        $presence->setValidation(true);
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($presence);

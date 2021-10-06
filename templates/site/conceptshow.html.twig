@@ -2,35 +2,48 @@
 
 {% block body %}
 
-<section id="articles">
+	<section class="lesarticles">
 
-	<div class="showarticle">
+		<div class="showarticle">
 
-		<div lass="showcentrage">
+			<div class="showcentrage">
 
-			<div class="articletp">
-			<h2>
-				{{articles.titre}}
-			</h2>
-			<img src="{{articles.image}}" alt="photo de la personne">
-			</div>
-			<div class="datearticle">
-				<img src="{{asset('images/variante-de-calendrier-annuel.png')}}" alt="calendrier">
-				<p>
-					{{ articles.datecreationarticle|date('d/m/Y')}}
-				</p>
-			</div>
+				<div class="retourconcept">
+					<a href="{{ path('concept') }}">
+						<button type="submit" class="btn btn-primary">
+							Revenir à la page "Le concept"
+						</button>
+					</a>
+				</div>
 
-			<div class="contenuarticle">
+				<div class="articletp">
+					<h2>
+						{{articles.titre}}
+					</h2>
+					<img src="{{articles.image}}" alt="photo de la personne">
+				</div>
 
-			<p> {{articles.contenu}} </p>				
-				
+				<div class="datearticle">
+					<img src="{{asset('images/variante-de-calendrier-annuel.png')}}" alt="calendrier">
+					<p>
+						{{ articles.datecreationarticle|date('d/m/Y')}}
+					</p>
+				</div>
+
+				<div class="contenuarticle">
+
+					<div class="containermax">
+
+						<p>	{{articles.contenu}} </p>
+
+					</div>
+
+				</div>
+
 			</div>
 
 		</div>
 
-	</div>
+		<section>
 
-<section>
-
-{% endblock %}
+		{% endblock %}

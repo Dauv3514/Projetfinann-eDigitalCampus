@@ -28,7 +28,7 @@ class DashboardUtilisateurController extends AbstractController
     /**
      * @Route("/dashboard/sortiesencours", name="dashboardsortiesencours", methods={"GET", "POST"})
      */
-    public function dashboardsortiesencours(SortieRepository $SortieRepository): Response
+    public function dashboardsortiesencours(): Response
     {
         
         //affiche mes données sur la page par ID       
@@ -41,15 +41,12 @@ class DashboardUtilisateurController extends AbstractController
         // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
         $users=$repo->findAll();
 
-        // // from inside a controller
-        //     $presence = true ;
+        // from inside a controller
+        /*     $presence = true ;
 
-        //     $sorties = $this -> getDoctrine ()
-        //     -> getRepository ( Sortie :: class )
-        //     -> findAllGreaterThanSortie ( $presence ); 
-
-        // // ... 
-
+            $sorties = $this->getDoctrine()
+            ->getRepository(Sortie::class)
+            ->findAllGreaterThanSortie($presence);  */
 
         return $this->render('dashboardutilisateur/dashboardsortiesencours.html.twig', [      
             'sorties'=>$sorties,
@@ -108,7 +105,7 @@ class DashboardUtilisateurController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="supprimer", methods={"POST"})
+     * @Route("supprimer/{id}", name="supprimer", methods={"POST"})
      */
     public function supprimer(Request $request, Sortie $sortie): Response
     {

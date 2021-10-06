@@ -1569,10 +1569,11 @@
 
 /* pages show concept */
 
-#articles {
+.lesarticles {
 
-    height: 600px;
     width: 100%;
+    margin-top: 100px;
+    height: 1560px;
 
 }
 
@@ -1581,30 +1582,118 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-
+    text-align: center;
 }
 
 .showcentrage {
 
-    height: 800px;
-    width: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 800px;
+
+}
+
+.retourconcept {
+
+    padding-bottom: 50px;
+
+}
+
+
+.articletp {
+
+    img {
+
+    height: 400px;
+    width: 800px;
+
+    }
+
+    h2 {
+
+    padding-bottom: 40px;
+
+    }
 
 }
 
 .contenuarticle {
 
-    width: 700px;
-    height: 600px;
+    width: 100%;
+
+}
+
+.datearticle {
+
+    width: 100px; 
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+
+    img {
+
+    margin-right: 40px;
+
+    }
 
     p {
 
     font-weight: bold;
-    width: 70%;
 
     }
 
 }
+
+.containermax {
+
+    width: 800px;
+
+    p {
+
+    font-weight: bold;
+    width: 800px;
+    height: 800px;
+
+    }
+
+}
+
+@media screen and (max-width: 920px) {
+
+.articletp {
+
+        img {
+    
+        height: 70%;
+        width: 70%;
+    
+        }
+    
+}
+
+.contenuarticle {
+
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+.containermax {
+
+    width: 100%;
+
+    p {
+
+    width: 100%;
+
+    }
+
+}
+
+.datearticle {
+
+    margin: 0 auto;
+
+}
+
+}
+
+

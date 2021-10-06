@@ -2,108 +2,111 @@
 
 {% block body %}
 
-<div class="concept">
+	<div class="concept">
 
-<div id="leconcept">
+		<div id="leconcept">
 
-		<div class="yohann">
+			<div class="yohann">
 
-		<img src="images/yohann.jpg">
+				<img src="images/yohann.jpg">
 
-		</div>
+			</div>
 
-		<div class="pitch">
+			<div class="pitch">
 
-				<p> L’été arrive, Yohann, malentendant depuis son enfance aimerait retrouver une vie sociale plus épanouie après avoir vécu une longue période d’isolement lié au Covid19. De part son handicap, Yohann a du mal à nouer du lien avec les autres. Il se demande comment il peut avoir des relations humaines plus régulières.
-
-				Yohann est ouvert à tout type de rencontre, que ce soit avec des personnes en situation de handicap ou des personnes valides. Ce qu’il voudrait surtout, c’est passer des bons moments autour d’une activité qu’il apprécie.
-				
-
-				Il côtoie de temps en temps une association de personnes ayant le même handicap que lui mais il ne peut pas faire l’activité qu’il souhaite, ni la faire quand il veut.
-				Mais Yohann a de la chance, un nouveau site vient d’arriver et pourra lui permettre de trouver un accompagnant pour l’activité qu’il souhaite faire.
-				
-				C’est le but de Handi’Acc, qui est un site d’accompagnements/sorties/rencontres destinées aux personnes en situation de handicap et qui renforce le lien social de ce type de population.
+				<p>
+					L’été arrive, Yohann, malentendant depuis son enfance aimerait retrouver une vie sociale plus épanouie après avoir vécu une longue période d’isolement lié au Covid19. De part son handicap, Yohann a du mal à nouer du lien avec les autres. Il se demande comment il peut avoir des relations humaines plus régulières.
+					
+					Yohann est ouvert à tout type de rencontre, que ce soit avec des personnes en situation de handicap ou des personnes valides. Ce qu’il voudrait surtout, c’est passer des bons moments autour d’une activité qu’il apprécie.
+									
+					
+					Il côtoie de temps en temps une association de personnes ayant le même handicap que lui mais il ne peut pas faire l’activité qu’il souhaite, ni la faire quand il veut.
+					Mais Yohann a de la chance, un nouveau site vient d’arriver et pourra lui permettre de trouver un accompagnant pour l’activité qu’il souhaite faire.
+									
+					C’est le but de Handi’Acc, qui est un site d’accompagnements/sorties/rencontres destinées aux personnes en situation de handicap et qui renforce le lien social de ce type de population.
 
 				</p>
 
-		</div>
+			</div>
 
-		<div class="illustrationsorties">
+			<div class="illustrationsorties">
 
-		<img src="images/illustrationssorties.png">
+				<img src="images/illustrationssorties.png">
 
-		</div>
+			</div>
 
-		<div class="fonctionnement">
+			<div class="fonctionnement">
 
-		<p> Il fonctionne sous le modèle accompagnant / accompagné. Les personnes handicapées (ou leurs référents) postent des annonces d’accompagnement pour trouver une personne 
-		afin de réaliser leurs activitées désirées (cinéma, voyages, bowling...). Les accompagnants peuvent être des personnes sans handicap ou avec handicap. L’inverse est aussi possible, puisqu’une personne valide qui 
-		souhaite accompagner une personne en situation de handicap, peut elle aussi, poster une annonce. Cette fois-ci, ce n’est pas l’accompagné qui choisit l’activité mais l’accompagnant.
-		Il est d’abord pensé pour les 12 millions de personnes handicapées quel que soit le type de handicap, mental ou physique. 
-		Mais il est aussi destiné au reste de la population, qui a un rôle à jouer dans l’inclusion des personnes en situation de handicap. </p>
+				<p>
+					Il fonctionne sous le modèle accompagnant / accompagné. Les personnes handicapées (ou leurs référents) postent des annonces d’accompagnement pour trouver une personne 
+					afin de réaliser leurs activitées désirées (cinéma, voyages, bowling...).accompagnants peuvent être des personnes sans handicap ou avec handicap. L’inverse est aussi possible, puisqu’une personne valide qui 
+					souhaite accompagner une personne en situation de handicap, peut elle aussi, poster une annonce. Cette fois-ci, ce n’est pas l’accompagné qui choisit l’activité mais l’accompagnant.
+					Il est d’abord pensé pour les 12 millions de personnes handicapées quel que soit le type de handicap, mental ou physique. 
+					Mais il est aussi destiné au reste de la population, qui a un rôle à jouer dans l’inclusion des personnes en situation de handicap.
+				</p>
 
-		</div>
+			</div>
 
-		<div class="centre2">
+			<div class="centre2">
 				<h1>
-				Accompagné ou Accompagnant ?
+					Accompagné ou Accompagnant ?
 				</h1>
 				<p>
-				tu souhaites proposer une sortie sur la plateforme ?
+					tu souhaites proposer une sortie sur la plateforme ?
 				</p>
 				<p>
-				c'est possible ici !
+					c'est possible ici !
 				</p>
 				<a href="{{ path('dashboard') }}">
 					<button type="submit" class="btn btn-primary">
-					Proposer une sortie via mon Dashboard
+						Proposer une sortie via mon Dashboard
 					</button>
 				</a>
-		</div>
+			</div>
 
-		<div class="titrearticle">
+			<div class="titrearticle">
 				<h2>
 					La vie de nos utilisateurs à travers leur handicap
 				</h2>
-		</div>
+			</div>
 
-		<div class="articles">
+			<div class="articles">
 
 				{% for article in articles %}
 
-				<div class="art">
+					<div class="art">
 
-							<h2>
-								{{article.titre}}
-							</h2>
-							<div class="articleimage">
-								<img src="{{article.image}}" alt="une personne handicapée">
-							</div>
-							<p>
-								{{article.extrait}}
-							</p>
-							{# 	<div class="datearticle">
-								<img src="images/variante-de-calendrier-annuel.png" alt="calendrier">
-								<p>
-								{{ article.datecreationarticle|date('d/m/Y H:i')}}
-								</p>
-							</div> #}
-							<div class="voirarticle">
+						<h2>
+							{{article.titre}}
+						</h2>
+						<div class="articleimage">
+							<img src="{{article.image}}" alt="une personne handicapée">
+						</div>
+						<p>
+							{{article.extrait}}
+						</p>
+						{# 	<div class="datearticle">
+														<img src="images/variante-de-calendrier-annuel.png" alt="calendrier">
+														<p>
+														{{ article.datecreationarticle|date('d/m/Y H:i')}}
+														</p>
+													</div> #}
+						<div class="voirarticle">
 							<a href="{{ path('conceptshow',{'id': article.id })}}">
 								<button type="submit" class="btn btn-dark">
 									Voir l'article
 								</button>
 							</a>
-							</div>			
+						</div>
 
-				</div>
+					</div>
 
 				{% endfor %}
 
-		</div>
-			
-</div>
+			</div>
 
-</div>
+		</div>
+
+	</div>
 
 {% endblock %}

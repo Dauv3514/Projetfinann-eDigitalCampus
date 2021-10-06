@@ -5,12 +5,14 @@ namespace App\Repository;
 use App\Entity\Sortie;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+
 /**
  * @method Sortie|null find($id, $lockMode = null, $lockVersion = null)
  * @method Sortie|null findOneBy(array $criteria, array $orderBy = null)
  * @method Sortie[]    findAll()
  * @method Sortie[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
+
 class SortieRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
@@ -18,23 +20,32 @@ class SortieRepository extends ServiceEntityRepository
         parent::__construct($registry, Sortie::class);
     }
 
-    // /**
-    //  * @return Sortie[]
-    //  */
-    // public function findAllGreaterThanSortie(int $presence): array
-    // {
-    //     $entityManager = $this->getEntityManager();
+    /**
+     * @return Sortie[]
+     */
+    public function findAllGreaterThanSortie(int $presence): array
+    {
+        $entityManager = $this->getEntityManager();
 
-    //     $query = $entityManager->createQuery(
-    //         'SELECT p
-    //         FROM App\Entity\Sortie p
-    //         WHERE p.presence > :presence
-    //         ORDER BY p.presence ASC'
-    //     )->setParameter('presence', $presence);
+        $query = $entityManager->createQuery(
+            
+        'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.validation = 1, user.prenom, user.nom
+        FROM sortie s
+        INNER JOIN presence p
+        On p.Id.sortie = sorties.id
 
-    //     // returns an array of Presence objects
-    //     return $query->getResult();
-    // } 
+        FROM user u
+        INNER JOIN sortie s
+        On u.Id.user = user.id
+
+        FROM presence p
+        INNER JOIN user u
+        On u.Id.users = presence.id'
+
+        )->setParameter('presence', $presence);
+     // returns an array of Presence objects
+        return $query->getResult();
+    } 
 
     // /**
     //  * @return Sortie[] Returns an array of Sortie objects
@@ -65,3 +76,5 @@ class SortieRepository extends ServiceEntityRepository
     }
     */
 }
+
+
