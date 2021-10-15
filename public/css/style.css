@@ -187,6 +187,9 @@
   .cen {
     width: 50%;
   }
+  .cen h1 {
+    font-weight: bold;
+  }
   .presentation {
     height: 1760px;
   }
@@ -302,6 +305,7 @@
 
 .textepres2 h1 {
   margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .inscrire {
@@ -416,6 +420,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .propositionsortie {
@@ -431,7 +436,6 @@
 .sortie {
   height: 100%;
   width: 100%;
-  border: 2px solid red;
 }
 
 .sortie img {
@@ -442,7 +446,6 @@
 .alignement {
   height: 100%;
   width: 100%;
-  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,8 +475,30 @@
 
 .sor {
   width: 280px;
-  border: 2px solid blue;
   margin: 30px;
+}
+
+.aumilieu .prenom {
+  margin-bottom: 20px;
+}
+
+.aumilieu img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aumilieu p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.message {
+  margin-bottom: 20px;
+}
+
+.prenom {
+  text-align: center;
 }
 
 .sorties h1 {
@@ -489,10 +514,16 @@
 }
 
 /* page d'inscription */
+.inscriptionsite {
+  margin-top: 70px;
+}
+
 .inscriptionsite h1 {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 
 .logosite {
@@ -533,6 +564,7 @@
 
 .compte {
   text-align: center;
+  margin-top: 30px;
 }
 
 .inscription {
@@ -545,9 +577,8 @@
 }
 
 .container2 {
-  height: 600px;
+  height: 500px;
   width: 600px;
-  border: 2px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -557,6 +588,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #e5e5e5;
+}
+
+.btninscription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* page de connexion */
@@ -577,15 +618,18 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 80px;
 }
 
 .container {
   height: 400px;
-  border: 2px solid black;
+  background-color: #e5e5e5;
+  margin-top: 40px;
 }
 
 .pasdecompte {
   text-align: center;
+  margin-top: 30px;
 }
 
 .milieu2 {
@@ -611,6 +655,15 @@
 
 .motdepasseoublie {
   padding-bottom: 20px;
+}
+
+.btnconnexion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* page dashboard + sidebar  */
@@ -680,7 +733,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  padding-top: 40px;
+  padding-top: 100px;
   background-color: #4D4D4D;
 }
 
@@ -804,12 +857,19 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 140px;
+  margin-left: 400px;
+}
+
+.ajoutsortie h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;
 }
 
 .container4 {
   height: 600px;
   width: 600px;
-  border: 2px solid black;
 }
 
 .formulaireajout {
@@ -825,9 +885,53 @@
   height: 100%;
 }
 
-.ajoutsortie h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
+.boutonajout {
+  margin: 0 auto;
+  width: 100px;
+}
+
+.boutonajout button {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.description1 {
+  width: 10px;
+}
+
+.description1 .textarea {
+  width: 200px !important;
+}
+
+@media screen and (max-width: 1300px) {
+  .container3 {
+    margin-left: 280px;
+  }
+}
+
+@media screen and (max-width: 1018px) {
+  .container3 {
+    margin-left: 140px;
+  }
+  #ajoutsortie_image {
+    width: 280px;
+  }
+  #ajoutsortie_ville {
+    width: 280px;
+  }
+  #ajoutsortie_adresse {
+    width: 280px;
+  }
+  .ajoutsortie h1 {
+    font-size: 24px;
+  }
+  .style {
+    width: 0px;
+  }
+}
+
+element.style {
+  width: 0px;
 }
 
 /* page modification d'une sortie */
@@ -929,6 +1033,7 @@
 
 .centrecontainer {
   height: 100%;
+  margin-left: 400px;
 }
 
 .milieucontainer {
@@ -950,12 +1055,6 @@
   height: 100%;
   width: 100%;
   border: 1px solid red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .alignement2 h1 {
@@ -981,6 +1080,10 @@
   width: 280px;
   border: 2px solid blue;
   margin: 30px;
+}
+
+#datecadrage {
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 1000px) {

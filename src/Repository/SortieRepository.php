@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Sortie;
+use App\Entity\Presence;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -23,29 +25,61 @@ class SortieRepository extends ServiceEntityRepository
     /**
      * @return Sortie[]
      */
-    public function findAllGreaterThanSortie(int $presence): array
+    public function findAllWithPresence($sortiesavecpresence): array
     {
         $entityManager = $this->getEntityManager();
 
         $query = $entityManager->createQuery(
             
-        'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.validation = 1, user.prenom, user.nom
-        FROM sortie s
-        INNER JOIN presence p
-        On p.Id.sortie = sorties.id
+            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, user.prenom, user.nom, user.id
+            FROM App\Entity\Sortie sortie
+            JOIN sortie.presences presence
+            JOIN sortie.user user
+            WHERE presence.id = :presence'
+        
+        )->setParameter('presence', $sortiesavecpresence);
 
-        FROM user u
-        INNER JOIN sortie s
-        On u.Id.user = user.id
-
-        FROM presence p
-        INNER JOIN user u
-        On u.Id.users = presence.id'
-
-        )->setParameter('presence', $presence);
-     // returns an array of Presence objects
         return $query->getResult();
+
     } 
+
+    /**
+     * @return Sortie[]
+     */
+    public function findAllWithoutPresence($sortiessanspresence): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            
+            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, presence.validation
+            FROM App\Entity\Sortie sortie
+            JOIN sortie.presences presence
+            JOIN sortie.user user
+            WHERE presence.validation = :presence'
+
+/* FROM App\Entity\Sortie sortie
+JOIN sortie.presences presence
+JOIN sortie.user user
+WHERE user.id = :presence */
+        
+        )->setParameter('presence', $sortiessanspresence);
+
+        return $query->getResult();
+
+    } 
+
+/*         $query = $entityManager->createQuery(
+            
+            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.validation , user.prenom, user.nom, user.id
+            FROM App\Entity\Sortie sortie
+            JOIN sortie.presences presence
+            JOIN sortie.user user
+            WHERE user.id = 3'
+        
+        )->setParameter('user', $user); */
+        
+     // returns an array of Presence objects 
 
     // /**
     //  * @return Sortie[] Returns an array of Sortie objects

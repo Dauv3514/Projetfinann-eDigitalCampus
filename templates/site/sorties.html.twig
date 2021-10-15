@@ -30,6 +30,7 @@
 					{% for sortie in sorties %}
 
 						<div class="sor">
+							<div class="aumilieu">
 							<div class="prenom">
 								{{sortie.user.prenom}}
 							</div>
@@ -38,6 +39,7 @@
 							Le {{sortie.date |date('d/m/Y')}}
 							à {{sortie.date |date('H:i')}}							
 							</p>
+							</div>
 							<p>
 								{{sortie.ville}}</p>
 							<p>
