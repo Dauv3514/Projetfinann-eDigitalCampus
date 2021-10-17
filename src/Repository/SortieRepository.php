@@ -31,13 +31,13 @@ class SortieRepository extends ServiceEntityRepository
 
         $query = $entityManager->createQuery(
             
-            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, user.prenom, user.nom, user.id
+            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, user.prenom, user.nom, user.id, presence.validation
             FROM App\Entity\Sortie sortie
             JOIN sortie.presences presence
             JOIN sortie.user user
-            WHERE presence.id = :presence'
+            WHERE presence.validation = :presence'
         
-        )->setParameter('presence', $sortiesavecpresence);
+        )->setParameter('presence',  $sortiesavecpresence);
 
         return $query->getResult();
 
@@ -64,6 +64,27 @@ JOIN sortie.user user
 WHERE user.id = :presence */
         
         )->setParameter('presence', $sortiessanspresence);
+
+        return $query->getResult();
+
+    } 
+
+    /**
+     * @return Sortie[]
+     */
+    public function findAllTerminee($sortiesterminees): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            
+            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, user.prenom, user.nom, user.id, presence.validation
+            FROM App\Entity\Sortie sortie
+            JOIN sortie.presences presence
+            JOIN sortie.user user
+            WHERE presence.validation = :presence'
+        
+        )->setParameter('presence',  $sortiesterminees);
 
         return $query->getResult();
 

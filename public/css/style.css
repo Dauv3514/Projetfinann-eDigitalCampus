@@ -55,6 +55,10 @@
   height: 90px;
 }
 
+#barrenavigation {
+  width: 100%;
+}
+
 @media screen and (max-width: 1600px) {
   nav li {
     margin-left: 40px;
@@ -71,22 +75,45 @@
   .navbar nav li {
     margin-top: 12px;
   }
-  .navbar ul :nth-child(5) {
+  .navbar ul :nth-child(4) {
     display: none;
   }
-  .navbar nav li {
-    display: none;
+  .navbar #barrenavigation {
+    position: absolute;
+    top: 100px;
+    background-color: black;
+    width: 210px;
+  }
+  .navbar .cache {
+    visibility: hidden;
+  }
+  .navbar nav {
+    width: 200px;
+  }
+  .navbar li {
+    line-height: 40px;
   }
   .navbar nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-right: 54px;
+  }
+  .navbar .logodusite {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 40px;
   }
   .toggle-button {
     position: absolute;
     top: 40px;
-    right: 60px;
+    left: 86px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -99,6 +126,7 @@
             justify-content: space-between;
     width: 30px;
     height: 20px;
+    cursor: pointer;
   }
   .toggle-button .bar {
     height: 3px;
@@ -697,6 +725,7 @@
 .bienvenue h1 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  font-size: 30px;
   margin-left: 400px;
 }
 
@@ -764,7 +793,7 @@
     font-size: 17px;
   }
   .bienvenue h1 {
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 200px;
   }
   .illustration {
@@ -942,12 +971,13 @@ element.style {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 140px;
+  margin-left: 400px;
 }
 
 .container6 {
   height: 600px;
   width: 600px;
-  border: 2px solid black;
 }
 
 .formulairemodif {
@@ -966,6 +996,7 @@ element.style {
 .modifsortie h1 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  text-align: center;
 }
 
 #sup {
@@ -1001,6 +1032,28 @@ element.style {
   padding-top: 30px;
 }
 
+.poubelle a {
+  margin-left: 500px;
+}
+
+@media screen and (max-width: 1300px) {
+  .container5 {
+    margin-left: 280px;
+  }
+}
+
+@media screen and (max-width: 1018px) {
+  .container5 {
+    margin-left: 140px;
+  }
+  .container6 {
+    width: 400px;
+  }
+  .poubelle a {
+    margin-left: 300px;
+  }
+}
+
 /* pages sortiesencours */
 .encours {
   display: -webkit-box;
@@ -1010,7 +1063,8 @@ element.style {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 200px;
-  margin-left: 300px;
+  margin-left: 45px;
+  margin-right: 45px;
   height: 100%;
 }
 
@@ -1042,7 +1096,7 @@ element.style {
 
 .sortie2 {
   height: 100%;
-  width: 74%;
+  width: 100%;
   border: 2px solid red;
 }
 
@@ -1086,15 +1140,90 @@ element.style {
   margin-top: 20px;
 }
 
+@media screen and (max-width: 1300px) {
+  .centrecontainer {
+    margin-right: 150px;
+    width: 720px;
+  }
+  .milieucontainer {
+    width: 720px;
+  }
+  .sortie2 {
+    width: 720px;
+  }
+  .alignement2 {
+    width: 720px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .encours {
-    margin-right: 20px;
+    margin-right: 100px;
+  }
+  .centrecontainer {
+    width: 460px;
+  }
+  .milieucontainer {
+    width: 460px;
+  }
+  .sortie2 {
+    width: 460px;
+  }
+  .alignement2 {
+    width: 460px;
   }
   .boutajout h1 {
     font-size: 15px;
   }
   .nontrouve h1 {
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .centrecontainer {
+    width: 370px;
+    margin-right: 200px;
+  }
+  .milieucontainer {
+    width: 370px;
+  }
+  .sortie2 {
+    width: 370px;
+  }
+  .alignement2 {
+    width: 370px;
+  }
+}
+
+/* page sortieterminee */
+.encours2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 45px;
+  margin-right: 45px;
+  height: 100%;
+}
+
+.sorties_terminees h1 {
+  text-align: center;
+  margin-top: 200px;
+  margin-left: 400px;
+}
+
+@media screen and (max-width: 1300px) {
+  .sorties_terminees h1 {
+    margin-left: 240px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sorties_terminees h1 {
+    margin-left: 200px;
   }
 }
 

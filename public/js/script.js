@@ -1,3 +1,17 @@
+const toogleButton = document.getElementById('toggle-button');
+// let barreNavigation = document.getElementsByClassName('navbar');
+const navbar = document.getElementById('barrenavigation');
+
+toogleButton.addEventListener('click', (e) => {
+    
+    console.log(e, 'camarche');
+
+    navbar.classList.toggle("cache");
+
+
+});
+
+
 /* $("#new_edit_utilisateur").on('submit', function(){
     if($("#mon_mp").val() != $("#verifpass").val()) {
         //implémentez votre code
@@ -7,15 +21,5 @@
     }
 });  */
 
-
-let button = document.getElementsByClassName('toggle-button');
-// let barreNavigation = document.getElementsByClassName('navbar');
-
-button.addEventListener('click',(e) =>  {
-
-    console.log(e,'caclique');
-    e.preventDefault();
-
-});
 
 

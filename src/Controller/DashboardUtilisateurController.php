@@ -48,6 +48,10 @@ class DashboardUtilisateurController extends AbstractController
 
         $sortiess = $this->getDoctrine()->getRepository(Sortie::class)
         ->findAllWithPresence($sortiesavecpresence);  
+
+        $repo= $this->getDoctrine()->getRepository(Sortie::class);
+        // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
+        $sortietest= $repo->findAll();
         
 
         return $this->render('dashboardutilisateur/dashboardsortiesencours.html.twig', [  
@@ -55,6 +59,7 @@ class DashboardUtilisateurController extends AbstractController
             'user'=> $users,
             'sorties'=> $sorties,
             'sortiessans'=> $sortiess,
+            'sortietest'=> $sortietest,
             
         ]);
     }
@@ -122,6 +127,23 @@ class DashboardUtilisateurController extends AbstractController
         return $this->redirectToRoute('dashboardsortiesencours');
     }
 
+        /**
+     * @Route("/dashboard/sortiesterminees", name="dashboardsortiesterminees")
+     */
+    public function dashboardsortiesterminees(): Response
+    {
+
+        $sortiesterminees = true ;
+
+        $sorties = $this->getDoctrine()->getRepository(Sortie::class)
+        ->findAllTerminee($sortiesterminees);  
+
+        return $this->render('dashboardutilisateur/dashboardsortiesterminees.html.twig', [
+            'sorties' => $sorties,
+        ]);
+    }
+
+
 
     /**
      * @Route("/dashboard/messages", name="dashboardmessages")
@@ -142,17 +164,6 @@ class DashboardUtilisateurController extends AbstractController
             'controller_name' => 'DashboardUtilisateurController',
         ]);
     }
-
-    /**
-     * @Route("/dashboard/sortiesterminees", name="dashboardsortiesterminees")
-     */
-    public function dashboardsortiesterminees(): Response
-    {
-        return $this->render('dashboardutilisateur/dashboardsortiesterminees.html.twig', [
-            'controller_name' => 'DashboardUtilisateurController',
-        ]);
-    }
-
 
 
 }
