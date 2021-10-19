@@ -793,7 +793,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e5e5e5;
+    background-color: #f7f7f7;
 
 }
 
@@ -833,7 +833,7 @@
 .container {
 
     height: 400px;
-    background-color: #e5e5e5;
+    background-color: #f7f7f7;
     margin-top: 40px; 
 
 }
@@ -897,20 +897,28 @@
     
 }
 
+.dashboardperso {
+
+    height: 800px;
+
+}
 
 .bienvenue {
     
     display: flex;
     justify-content: center;
-    padding-top: 160px;
-    padding-bottom: 100px;
+    margin-top: 160px;
+    margin-bottom: 100px;
+    max-height: 25px;
 
     h1 {
 
+    text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 30px;
     margin-left: 400px;
+    width: 100%;
 
     }
 
@@ -1006,7 +1014,7 @@
     
         font-size: 18px;
         margin-right: 200px;
-    
+
         }
 
     }
@@ -1043,6 +1051,7 @@
     }
 
     .bienvenue {
+
     
         h1 {
     
@@ -1122,6 +1131,7 @@
     }
 
     .bienvenue {
+
     
         h1 {
     
@@ -1550,10 +1560,15 @@ element.style {
 
 .sor2 {
 
-    
     width: 280px;
     border: 2px solid blue;
     margin: 30px;
+
+}
+
+.personnes {
+
+    margin-bottom : 30px;
 
 }
 
@@ -2079,5 +2094,242 @@ element.style {
 }
 
 }
+
+/* page detailsortie */
+
+.showsorties {
+
+    margin-top: 120px;
+    margin-left: 400px;
+    text-align: center;
+
+}
+
+.showcentrer {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.conteneursortie {
+
+    width: 340px;
+    margin: 30px;
+
+    img {
+
+    width: 335px;
+
+
+    }
+
+}
+
+.infospratiques {
+
+    h1 {
+
+    font-size: 20px;
+
+    }
+
+    p {
+
+    font-size: 12px;
+
+    }
+}
+
+.centrerinfos {
+
+    margin-top: 100px;
+
+}
+
+.titreinfos {
+
+    h1 {
+
+    text-align: center;
+
+    }
+
+}
+
+.boiteinfos {
+
+    background-color: black;
+    width: 300px;
+    height: 180px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.boiteinfos {
+
+    .forminfos {
+
+    padding-top: 30px;
+    padding-left: 10px;
+
+    }
+
+}
+
+#formboutton {
+
+    margin-left: 20px;
+    border-radius: 2px;
+    background-color: #1877F2;
+
+}
+
+.centrepoubelle {
+
+    margin-right: 0px;
+
+}
+
+.uneinfo {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    p {
+
+    color: white;
+    margin-left: 15px;
+
+    }
+
+    img {
+
+    height: 24px;
+    width: 24px;
+
+    }
+
+}
+
+
+.poubelle {
+
+    a {
+
+    margin: 0 auto;
+
+    }
+
+}
+
+@media screen and (max-width: 1300px) {
+
+.showsorties {
+
+    margin-left: 215px;
+
+}
+
+}
+
+@media screen and (max-width: 1025px) {
+
+    .showsorties {
+    
+        margin-left: 150px;
+    
+    }
+    
+    .conteneursortie {
+
+        width: 250px;
+
+        img {
+
+        width: 246px;
+
+        }
+
+    }
+
+    .infospratiques {
+
+        width: 250px;
+        margin-left: 60px;
+    }
+
+    .boiteinfos {
+
+        width: 250px;
+
+    }
+
+    .uneinfo {
+
+        p {
+
+        font-size: 11px;
+
+        }
+
+    }
+
+    #forminput {
+
+        width: 70%;
+
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .conteneursortie {
+
+        width: 180px;
+        margin-top: 80px;
+
+        img {
+
+        width: 176px;
+
+        }
+
+    }
+
+    #sup {
+
+        height: 36px;
+        width: 36px;
+
+    }
+
+    .infospratiques {
+
+        margin-left: 20px;
+        margin-bottom: 80px;
+
+    }
+
+    .showsorties {
+
+        margin-left: 140px;
+
+    }
+
+    .showcentrer{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+
+}
+
+
 
 

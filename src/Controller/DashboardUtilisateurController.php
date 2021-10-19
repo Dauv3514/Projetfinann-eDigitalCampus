@@ -37,17 +37,20 @@ class DashboardUtilisateurController extends AbstractController
         // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
         $users= $repo->findAll(); 
 
-        $sortiessanspresence = true ;
-        $utilisateurs = true ;
+
+        $nonvalidee = true ;
+        $ids = $this->getUser()->getId();
 
         $sorties = $this->getDoctrine()->getRepository(Sortie::class)
-        ->findAllWithoutPresence($sortiessanspresence, $utilisateurs); 
+        ->findAllWithoutPresence($ids, $nonvalidee); 
 
-        
+
         $sortiesavecpresence = true ;
+        $id = $this->getUser()->getId();
 
         $sortiess = $this->getDoctrine()->getRepository(Sortie::class)
-        ->findAllWithPresence($sortiesavecpresence);  
+        ->findAllWithPresence($sortiesavecpresence, $id);  
+
 
         $repo= $this->getDoctrine()->getRepository(Sortie::class);
         // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
@@ -56,7 +59,7 @@ class DashboardUtilisateurController extends AbstractController
 
         return $this->render('dashboardutilisateur/dashboardsortiesencours.html.twig', [  
 
-            'user'=> $users,
+            'users'=> $users,
             'sorties'=> $sorties,
             'sortiessans'=> $sortiess,
             'sortietest'=> $sortietest,
@@ -78,6 +81,7 @@ class DashboardUtilisateurController extends AbstractController
     
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($sortie);         
             $entityManager->flush();
@@ -110,6 +114,16 @@ class DashboardUtilisateurController extends AbstractController
         return $this->renderForm('dashboardutilisateur/modificationsortie.html.twig', [
             'sortie' => $sortie,
             'form' => $form,
+        ]);
+    }
+
+    /**
+     * @Route("dashboard/detailsortie/{id}", name="apercusortie", methods={"GET"})
+     */
+    public function apercusortie(Sortie $sorties): Response
+    {
+        return $this->render('dashboardutilisateur/apercusortie.html.twig', [
+            'sortie' => $sorties,
         ]);
     }
 

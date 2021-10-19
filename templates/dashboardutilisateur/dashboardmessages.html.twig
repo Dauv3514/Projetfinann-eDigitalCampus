@@ -1,25 +1,18 @@
 {% extends 'basesidebar.html.twig' %}
 
-{% block title %}Hello SiteController!
-{% endblock %}
-
 {% block body %}
 
 <div class="liens">
-
-		<a class="retour" href="{{ path('accueil') }}">
-			Retour à la page d'accueil
-		</a>
-		<a class="deco" href="{{ path('app_logout') }}">
-			Deconnexion
-		</a>
-
+	<a class="retour" href="{{ path('accueil') }}">
+		Retour à la page d'accueil
+	</a>
+	<a class="deco" href="{{ path('app_logout') }}">
+		Deconnexion
+	</a>
 </div>
 
 <div class="imgutilisateur">
-
-		<img src="{{app.user.avatar}}" alt="profil utilisateur">
-
+	<img src="{{app.user.avatar}}" alt="profil utilisateur">
 </div>
 
 {% endblock %}

@@ -3,17 +3,13 @@
 {% block body %}
 
 	<div class="concept">
-
 		<div id="leconcept">
 
 			<div class="yohann">
-
 				<img src="images/yohann.jpg">
-
 			</div>
 
 			<div class="pitch">
-
 				<p>
 					L’été arrive, Yohann, malentendant depuis son enfance aimerait retrouver une vie sociale plus épanouie après avoir vécu une longue période d’isolement lié au Covid19. De part son handicap, Yohann a du mal à nouer du lien avec les autres. Il se demande comment il peut avoir des relations humaines plus régulières.
 					
@@ -24,19 +20,14 @@
 					Mais Yohann a de la chance, un nouveau site vient d’arriver et pourra lui permettre de trouver un accompagnant pour l’activité qu’il souhaite faire.
 									
 					C’est le but de Handi’Acc, qui est un site d’accompagnements/sorties/rencontres destinées aux personnes en situation de handicap et qui renforce le lien social de ce type de population.
-
 				</p>
-
 			</div>
 
 			<div class="illustrationsorties">
-
 				<img src="images/illustrationssorties.png">
-
 			</div>
 
 			<div class="fonctionnement">
-
 				<p>
 					Il fonctionne sous le modèle accompagnant / accompagné. Les personnes handicapées (ou leurs référents) postent des annonces d’accompagnement pour trouver une personne 
 					afin de réaliser leurs activitées désirées (cinéma, voyages, bowling...).accompagnants peuvent être des personnes sans handicap ou avec handicap. L’inverse est aussi possible, puisqu’une personne valide qui 
@@ -44,7 +35,6 @@
 					Il est d’abord pensé pour les 12 millions de personnes handicapées quel que soit le type de handicap, mental ou physique. 
 					Mais il est aussi destiné au reste de la population, qui a un rôle à jouer dans l’inclusion des personnes en situation de handicap.
 				</p>
-
 			</div>
 
 			<div class="centre2">
@@ -86,11 +76,9 @@
 							{{article.extrait}}
 						</p>
 						{# 	<div class="datearticle">
-														<img src="images/variante-de-calendrier-annuel.png" alt="calendrier">
-														<p>
-														{{ article.datecreationarticle|date('d/m/Y H:i')}}
-														</p>
-													</div> #}
+							<img src="images/variante-de-calendrier-annuel.png" alt="calendrier">
+							<p> {{ article.datecreationarticle|date('d/m/Y H:i')}} </p>
+							</div> #}
 						<div class="voirarticle">
 							<a href="{{ path('conceptshow',{'id': article.id })}}">
 								<button type="submit" class="btn btn-dark">
@@ -100,13 +88,9 @@
 						</div>
 
 					</div>
-
 				{% endfor %}
-
 			</div>
-
 		</div>
-
 	</div>
 
 {% endblock %}

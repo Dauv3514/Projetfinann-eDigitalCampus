@@ -6,11 +6,13 @@
 {% block body %}
 
 	<div class="inscriptionsite">
+
 		<div class="logosite">
 			<a href="{{ path('accueil') }}" class="button">
 				<img src="images/logo handi'acc.png" alt="Logo du site"/>
 			</a>
 		</div>
+
 		<h1>
 			Créer votre compte
 		</h1>
@@ -42,21 +44,19 @@
 				<input type="password" id="verifpass" placeholder="Saisir une seconde fois le mot de passe" size="30" =required>
 				</div> #}
 
-
 				<div id="validation">
 					{{ form_row(registrationForm.validation) }}
 				</div>
 
 				<div class="btninscription">
-				<button type="submit" class="btn btn-danger">
+					<button type="submit" class="btn btn-danger">
 					Créer un compte
-				</button>
+					</button>
 				</div>
 
 			</div>
 
 			{{ form_end(registrationForm) }}
-
 
 		</div>
 

@@ -6,59 +6,55 @@
 
 		<div class="proposersortie">
 
-		<div class="titreproposition">
-			<h1> Proposition de sorties des membres </h1>
-		</div>
+			<div class="titreproposition">
+				<h1> Proposition de sorties des membres </h1>
+			</div>
 
-		<div class="propositionsortie">
-			<p> Tu peux aussi proposer une sortie aux membres via ton dashboard en cliquant ici ! </p>
-			<a href="{{ path('connexion') }}">
+			<div class="propositionsortie">
+				<p> Tu peux aussi proposer une sortie aux membres via ton dashboard en cliquant ici ! </p>
+				<a href="{{ path('connexion') }}">
 				<button type="submit" class="btn btn-dark">
 					Proposer une sortie
 				</button>
-			</a>
-		</div>
+				</a>
+			</div>
 
 		</div>
 
 		<div class="sortie">
 			<div class="alignement">
-
 				<div class="sort">
-
-
 					{% for sortie in sorties %}
-
 						<div class="sor">
 							<div class="aumilieu">
 							<div class="prenom">
 								{{sortie.user.prenom}}
 							</div>
-							<img src="{{sortie.image}}" alt="unesortie">
-							<p>
-							Le {{sortie.date |date('d/m/Y')}}
-							à {{sortie.date |date('H:i')}}							
-							</p>
+								<img src="{{sortie.image}}" alt="unesortie">
+								<p>
+									Le {{sortie.date |date('d/m/Y')}}
+									à {{sortie.date |date('H:i')}}							
+								</p>
 							</div>
-							<p>
-								{{sortie.ville}}</p>
-							<p>
-								{{sortie.description}}
-							</p>
+								<p> {{sortie.ville}} </p>
+								<p> {{sortie.description}} </p>
+
 							{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
+
 							{% if is_granted('ROLE_USER') %}
 
 								{# Ici le contenu réservé aux utilisateurs connectés #}
-								<div class="message">
-									<a href="{{ path('dashboardmessages') }}">
-										<button type="submit" class="btn btn-danger">
-											Envoyer un message à 
-											{{sortie.user.prenom}}
-										</button>
-									</a>
-								</div>
 
-								{% else %}
+							<div class="message">
+								<a href="{{ path('dashboardmessages') }}">
+								<button type="submit" class="btn btn-danger">
+									Envoyer un message à 
+									{{sortie.user.prenom}}
+								</button>
+								</a>
+							</div>
+
+							{% else %}
 
 								{# Ici le contenu affiché aux utilisateurs non connectés #}
 
@@ -66,6 +62,7 @@
 							{% endif %}
 
 							<div class='accepte'>
+
 							{% if is_granted('ROLE_USER') %}
 								<a href="{{ path('acceptesortie', { 'id': sortie.id })}}">
 
@@ -76,17 +73,15 @@
 
 							{% endif %}
 						
-									<button type="submit" class="btn btn-primary">
+								<button type="submit" class="btn btn-primary">
 										Accepter la sortie
-									</button>
+								</button>
 								</a>
 							</div>
 						</div>
 					{% endfor %}
 				</div>
 			</div>
-
-
 		</div>
 
 	</section>

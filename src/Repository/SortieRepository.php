@@ -25,19 +25,20 @@ class SortieRepository extends ServiceEntityRepository
     /**
      * @return Sortie[]
      */
-    public function findAllWithPresence($sortiesavecpresence): array
+    public function findAllWithPresence($sortiesavecpresence, $id): array
     {
         $entityManager = $this->getEntityManager();
 
         $query = $entityManager->createQuery(
             
-            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, user.prenom, user.nom, user.id, presence.validation
+            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, user.prenom, user.nom, user.id, presence.validation, sortie.id
             FROM App\Entity\Sortie sortie
             JOIN sortie.presences presence
             JOIN sortie.user user
-            WHERE presence.validation = :presence'
+            WHERE presence.validation = :presence
+            AND user.id = :id'
         
-        )->setParameter('presence',  $sortiesavecpresence);
+        )->setParameters(array('presence'=> $sortiesavecpresence, 'id'=> $id));
 
         return $query->getResult();
 
@@ -46,24 +47,20 @@ class SortieRepository extends ServiceEntityRepository
     /**
      * @return Sortie[]
      */
-    public function findAllWithoutPresence($sortiessanspresence): array
+    public function findAllWithoutPresence($ids, $nonvalidee): array
     {
         $entityManager = $this->getEntityManager();
 
         $query = $entityManager->createQuery(
             
-            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, presence.validation
+            'SELECT sortie.date, sortie.ville, sortie.adresse, sortie.image, sortie.description, presence.id, user.prenom, user.nom, user.id, presence.validation, sortie.id
             FROM App\Entity\Sortie sortie
-            JOIN sortie.presences presence
+            LEFT JOIN sortie.presences presence
             JOIN sortie.user user
-            WHERE presence.validation = :presence'
+            WHERE user.id = :id
+            AND presence.validation = :nonvalidee'
 
-/* FROM App\Entity\Sortie sortie
-JOIN sortie.presences presence
-JOIN sortie.user user
-WHERE user.id = :presence */
-        
-        )->setParameter('presence', $sortiessanspresence);
+        )->setParameters(array('id'=> $ids, 'nonvalidee'=> $nonvalidee));
 
         return $query->getResult();
 

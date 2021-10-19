@@ -1,5 +1,4 @@
 const toogleButton = document.getElementById('toggle-button');
-// let barreNavigation = document.getElementsByClassName('navbar');
 const navbar = document.getElementById('barrenavigation');
 
 toogleButton.addEventListener('click', (e) => {

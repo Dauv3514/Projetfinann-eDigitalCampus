@@ -3,23 +3,23 @@
 {% block body %}
 
 	<div class="presentation">
-
 		<div class="accompagne">
+
 			<div class="image1">
 				<img src="images/basket.png" alt="une personne handicapée">
 			</div>
 
 			<div class="textepres1">
 				<div class="cen">
-				<h1>
+					<h1>
 					Accompagné
-				</h1>
-				<p>
+					</h1>
+					<p>
 					Je suis une personne en situation de handicap  
 					qui souhaite trouver une personne pour
 					l’accompagner dans une activité 
 					(balade, sorties, voyages etc..)
-				</p>
+					</p>
 
 				{% if is_granted('ROLE_USER') %}
 
@@ -36,10 +36,9 @@
 					</a>
 
 				{% endif %}
-
 				</div>
-
 			</div>
+
 		</div>
 
 		<div class="accompagnant">
@@ -56,26 +55,24 @@
 
 					{# Ici le contenu réservé aux utilisateurs connectés #}
 
-
 				{% else %}
 
 					{# Ici le contenu affiché aux utilisateurs non connectés #}
-					<a href="{{ path('sorties') }}">
-						<button type="submit" class="btn btn-primary">
-							Voir les sorties proposées <br> par les membres
-						</button>
-					</a>
+				<a href="{{ path('sorties') }}">
+					<button type="submit" class="btn btn-primary">
+					Voir les sorties proposées <br> par les membres
+					</button>
+				</a>
 
 				{% endif %}
 
-
 			</div>
+
 			<div class="image2">
 				<img src="images/photo.png" alt="personne accompagnatrice">
 			</div>
 
 		</div>
-
 	</div>
 
 	<div class="inscrire">
@@ -85,6 +82,7 @@
 			{# Ici le contenu réservé aux utilisateurs connectés #}
 			<div class="dashboard">
 				<div class="centre">
+
 					<h1>
 						Accompagné ou Accompagnant ?
 					</h1>
@@ -99,9 +97,9 @@
 							Proposer une sortie via mon Dashboard
 						</button>
 					</a>
+
 				</div>
 			</div>
-
 
 		{% else %}
 
@@ -115,6 +113,5 @@
 		{% endif %}
 
 	</div>
-
 
 {% endblock %}

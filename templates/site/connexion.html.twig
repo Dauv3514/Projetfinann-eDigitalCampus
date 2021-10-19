@@ -3,9 +3,7 @@
 {% block body %}
 
 	<div class="axe">
-
 		<div class="connexion">
-
 
 			{# {% if app.user %} #}
 			{# <div class="mb-3"> #}
@@ -13,8 +11,8 @@
 			{# </div> #}
 			{# {% endif %} #}
 
-				<div class="logosite"> <a href="{{ path('accueil') }}" class="button">
-					<img src="images/logo handi'acc.png" alt="Logo du site"/>
+			<div class="logosite"> <a href="{{ path('accueil') }}" class="button">
+				<img src="images/logo handi'acc.png" alt="Logo du site"/>
 				</a>
 			</div>
 
@@ -32,25 +30,18 @@
 						{% endif %}
 
 						<div class="adresseemail">
-
 							<input type="email" name="email" size="30" id="inputEmail" class="form" autocomplete="email" placeholder="Email" required autofocus>
-
 						</div>
 
 						<div class="motdepasse">
-
 							<input type="password" size="30" name="password" id="inputPassword" class="form" autocomplete="current-password" placeholder="Mot de passe" required>
-
 							<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
 						</div>
 
 						<div class="motdepasseoublie">
-
 							<a href="{{ path('dashboard') }}">
 								Mot de passe oublié ?
 							</a>
-
 						</div>
 
 						<div class="btnconnexion">
@@ -59,13 +50,13 @@
 						</button>
 						</div>
 
-					</div>
-
 				</div>
 
 			</div>
 
 		</div>
+
+	</div>
 
 		<div class="pasdecompte">
 			<p>
@@ -75,6 +66,9 @@
 				Je m'inscris !
 			</a>
 		</div>
+
 	</form>
 
-</div>{% endblock %}
+	</div>
+
+{% endblock %}

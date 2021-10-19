@@ -25,18 +25,18 @@ class AppFixtures extends Fixture
 
         for ($nbUsers = 0; $nbUsers < 10; $nbUsers++) {
 
-        $user = new User();
-        $user->setEmail($faker->email());
-        $user->setNom($faker->lastName());
-        $user->setAvatar($faker->imageUrl());
-        $user->setDatecreationducompte($faker->dateTime());
-        $user->setMiseajourcreationducompte($faker->dateTime());
-        $user->setPrenom($faker->firstName());
-        $user->setPassword($this->passwordHasher->hashPassword($user, 'password'));
-        $manager->persist($user);
-        $manager->flush();
+            $user = new User();
+            $user->setEmail($faker->email());
+            $user->setNom($faker->lastName());
+            $user->setAvatar($faker->imageUrl());
+            $user->setDatecreationducompte($faker->dateTime());
+            $user->setMiseajourcreationducompte($faker->dateTime());
+            $user->setPrenom($faker->firstName());
+            $user->setPassword($this->passwordHasher->hashPassword($user, 'password'));
+            $manager->persist($user);
+            $manager->flush();
 
-        $this->addReference('user_'. $nbUsers, $user);
+            $this->addReference('user_'. $nbUsers, $user);
 
         }
 
@@ -45,7 +45,6 @@ class AppFixtures extends Fixture
             $users = $this->getReference('user_'. $faker->numberBetween(0,5));
             $sortie = new Sortie();
             $sortie->setUser($users);
-       //   $sortie->setUser($faker->numberBetween(1, 50));
             $sortie->setDate($faker->dateTime());
             $sortie->setVille($faker->text());
             $sortie->setAdresse($faker->text());

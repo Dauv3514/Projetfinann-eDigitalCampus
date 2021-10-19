@@ -3,27 +3,21 @@
 {% block body %}
 
 	<div class="liens">
-
 		<a class="retour" href="{{ path('accueil') }}">
 			Retour à la page d'accueil
 		</a>
 		<a class="deco" href="{{ path('app_logout') }}">
 			Deconnexion
 		</a>
-
 	</div>
 
 	<div class="imgutilisateur">
-
 		<img src="{{app.user.avatar}}" alt="profil utilisateur">
-
 	</div>
 
 	<div class="encours">
 		<div class="centrecontainer">
 			<div class="milieucontainer">
-
-
 				<div class="sortie2">
 					<div class="alignement2">
 						<div class="sort2">
@@ -36,42 +30,6 @@
 									</a>
 									<h1>
 										Mes propositions de sorties en cours (accompagnant trouvé)
-									</h1>
-								</div>
-							</div>
-							{% for sortie in sorties %}
-								<div class="sor2">
-									<img src="{{sortie.image}}" alt="illustration d'une sortie">
-									<p id="datecadrage">
-										Le
-										{{sortie.date |date('d/m/Y')}}
-										à
-										{{sortie.date |date('H:i')}}
-									</p>
-									<p>
-										{{sortie.ville}}</p>
-									<p>
-										{{sortie.description}}
-									</p>
-									<a href="{{ path('modificationsortie', { 'id': sortie.id })}}">
-										<button type="submit" class="btn btn-primary">
-											Modifier la sortie
-										</button>
-									</a>
-									<div
-										class="message">{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
-									</div>
-
-
-								</div>
-							{% endfor %}
-						</div>
-
-						<div class="sort2">
-							<div class="accompagnanttrouve">
-								<div class="boutajout">
-									<h1>
-										Mes propositions de sorties en cours (accompagnant non trouvé)
 									</h1>
 								</div>
 							</div>
@@ -96,8 +54,39 @@
 									</a>
 									<div class="message">{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
 									</div>
+								</div>
+							{% endfor %}
+						</div>
 
-
+						<div class="sort2">
+							<div class="accompagnanttrouve">
+								<div class="boutajout">
+									<h1>
+										Mes propositions de sorties en cours (accompagnant non trouvé)
+									</h1>
+								</div>
+							</div>
+							{% for sortie in sorties %}
+								<div class="sor2">
+									<img src="{{sortie.image}}" alt="illustration d'une sortie">
+									<p id="datecadrage">
+										Le
+										{{sortie.date |date('d/m/Y')}}
+										à
+										{{sortie.date |date('H:i')}}
+									</p>
+									<p>
+										{{sortie.ville}}</p>
+									<p>
+										{{sortie.description}}
+									</p>
+									<a href="{{ path('modificationsortie', { 'id': sortie.id })}}">
+										<button type="submit" class="btn btn-primary">
+											Modifier la sortie
+										</button>
+									</a>
+									<div class="message">{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
+									</div>
 								</div>
 							{% endfor %}
 						</div>
@@ -114,9 +103,12 @@
 								<div class="sor2">
 									<p> Sortie proposée par : </p>
 
-									{# <div class="personne">
-									{{sortie.users.nom}}
-									</div> #}
+									<div class="personnes">
+										<p> 
+											{{sortie.user.prenom}}
+											{{sortie.user.nom}} 
+										</p>
+									</div> 
 
 									<img src="{{sortie.image}}" alt="illustration d'une sortie">
 									<p id="datecadrage">
@@ -130,24 +122,18 @@
 									<p>
 										{{sortie.description}}
 									</p>
-									<a href="{{ path('modificationsortie', { 'id': sortie.id })}}">
+									<a href="{{ path('apercusortie', { 'id': sortie.id })}}">
 										<button type="submit" class="btn btn-dark">
 											Aperçu de la sortie
 										</button>
 									</a>
 									<div class="message">{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
 									</div>
-
-
 								</div>
 							{% endfor %}
 						</div>
-
 					</div>
-
-
 				</div>
-
 			</div>
 
-		{% endblock %}
+{% endblock %}

@@ -3,30 +3,27 @@
 {% block body %}
 
 	<div class="liens">
-
 		<a class="retour" href="{{ path('accueil') }}">
 			Retour à la page d'accueil
 		</a>
 		<a class="deco" href="{{ path('app_logout') }}">
 			Deconnexion
 		</a>
-
 	</div>
 
 	<div class="imgutilisateur">
-
-			<img src="{{app.user.avatar}}" alt="profil utilisateur">
-			
+		<img src="{{app.user.avatar}}" alt="profil utilisateur">	
 	</div>
 
-<div class="dashboardperso">
-	<div class="bienvenue">
+	<div class="dashboardperso">
+		<div class="bienvenue">
 
-		<h1>
+			<h1>
 			Bienvenue sur votre Dashboard :
 			{{app.user.prenom}}
 			{{app.user.nom}}
-		</h1>
+			</h1>
+
 		{# {{app.user.id}} #}
 
 		{#  <p>
@@ -37,13 +34,11 @@
 			{{role}}
 		{% endfor %} #}
 
+		</div>
+
+		<div class="illustration">
+			<img src="images/tiralarc.jpg" alt=" une personne valide et une personne handicapée jouant au tir à l'arc">
+		</div>
 	</div>
-
-	<div class="illustration">
-
-		<img src="images/tiralarc.jpg" alt=" une personne valide et une personne handicapée jouant au tir à l'arc">
-
-	</div>
-</div>
 
 {% endblock %}

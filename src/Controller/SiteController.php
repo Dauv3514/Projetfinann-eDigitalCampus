@@ -59,7 +59,6 @@ class SiteController extends AbstractController
         $repository=$this->getDoctrine()->getRepository(User::class);
         $users = $repository->findAll();
 
-
         return $this->render('site/sorties.html.twig', [
             'sorties'=>$sorties,
             'users'=>$users,

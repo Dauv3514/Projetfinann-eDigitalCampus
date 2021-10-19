@@ -1,4 +1,5 @@
 <div class="poubelle">
+
 		<form method="post" action="{{ path('supprimer', {'id': sortie.id}) }}" onsubmit="return confirm('Es-tu sûr de vouloir supprimer cette sortie ?');">
 		<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sortie.id) }}">
 		<a href="{{ path('dashboardsortiesencours')}}">
@@ -7,4 +8,5 @@
         </button>
 		</a>
 		</form>
+		
 </div>

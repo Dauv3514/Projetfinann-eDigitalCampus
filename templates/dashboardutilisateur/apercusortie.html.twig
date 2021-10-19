@@ -1,0 +1,90 @@
+{% extends 'basesidebar.html.twig' %}
+
+{% block body %}
+
+<section class="lessorties">
+
+	<div class="liens">
+		<a class="retour" href="{{ path('accueil') }}">
+			Retour à la page d'accueil
+		</a>
+		<a class="deco" href="{{ path('app_logout') }}">
+			Deconnexion
+		</a>
+	</div>
+
+	<div class="imgutilisateur">
+		<img src="{{app.user.avatar}}" alt="profil utilisateur">
+	</div>
+
+	<div class="showsorties">
+
+		<h1>
+			Apercu de la sortie
+		</h1>
+
+			<div class="showcentrer">
+				<div class="conteneursortie">
+					<div class="detailsortie">
+
+						<div class>
+							<img src="{{sortie.image}}" alt="illustration d'une sortie">
+						</div>
+						<p id="datecadrage">
+							Le
+							{{sortie.date |date('d/m/Y')}}
+							à
+							{{sortie.date |date('H:i')}}
+						</p>
+						<p>
+							{{sortie.ville}}
+						</p>
+						<p>
+							{{sortie.adresse}}
+						</p>
+						<p>
+							{{sortie.description}}
+						</p>
+					</div>
+
+				</div>
+
+				<div class="infospratiques">
+					<div class="centrerinfos">
+						<div class="titreinfos">
+							<h1>
+								Informations pratiques :
+							</h1>
+						</div>
+						<div class="descriptioninfos">
+							<p>
+								personnes à contacter, informations sur le handicap, rdv, transport...
+							</p>
+						</div>
+						<div class="boiteinfos">
+
+							<form action="" method="post" class="forminfos">
+								<textarea id="forminput" name="informationpratique" rows="1" cols="20">
+									Le contenu par défaut se place ici
+								</textarea>
+								<input type="submit" value="X" id="formboutton">
+							</form>
+
+							<div class="uneinfo">
+							<img src="{{asset('images/iconeannuler.png')}}">
+							<p> Numéro de la personne handicapée : <br> 0625124558 </p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+            </div>
+
+        <div class="centrepoubelle">
+		{{ include('site/supprimer.html.twig') }}
+        </div>
+    </div>
+
+<section>
+
+{% endblock %}
