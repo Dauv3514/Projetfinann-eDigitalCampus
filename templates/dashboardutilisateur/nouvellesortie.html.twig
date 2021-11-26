@@ -40,7 +40,7 @@
 					{{ form_widget(form.image, {'attr': {'placeholder': 'Lien de l\'illustration', 'size':'50'}}) }}
 				</div>
 				<div id="description1">
-					{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'style':'width: 428px','height':'400px'}}) }}
+					{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'size':'50'}}) }}
 				</div>
 
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -48,7 +48,8 @@
 				<div class="boutonajout">
 				<a href="{{ path('dashboardsortiesencours')}}"> 
 				<button type="submit" class="btn btn-primary"> 
-				Ajouter </button> 
+				Ajouter 
+				</button> 
 				</a>
 				</div>
 				{{ form_end(form) }}

@@ -1,15 +1,12 @@
-const toogleButton = document.getElementById('toggle-button');
-const navbar = document.getElementById('barrenavigation');
+let toogleButton = document.getElementById('toggle-button');
+let navbar = document.getElementById('barrenavigation');
 
-toogleButton.addEventListener('click', (e) => {
+toogleButton.addEventListener('click', (e)=> {
     
-    console.log(e, 'camarche');
-
     navbar.classList.toggle("cache");
-
+    console.log('dqsd',e)
 
 });
-
 
 /* $("#new_edit_utilisateur").on('submit', function(){
     if($("#mon_mp").val() != $("#verifpass").val()) {
@@ -19,6 +16,5 @@ toogleButton.addEventListener('click', (e) => {
         return false;
     }
 });  */
-
 
 

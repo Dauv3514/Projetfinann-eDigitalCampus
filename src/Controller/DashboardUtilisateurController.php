@@ -13,7 +13,7 @@ use App\Repository\SortieRepository;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardUtilisateurController extends AbstractController
-{
+{ 
 
     /**
      * @Route("/dashboard", name="dashboard", methods={"GET","POST"})
@@ -37,6 +37,11 @@ class DashboardUtilisateurController extends AbstractController
         // Récupère l'objet en fonction de l'@Id (généralement appelé $id)
         $users= $repo->findAll(); 
 
+        /* Methodes permettant d'afficher les sorties en fonctions de certains critères
+        Dans l'odre -> Mes propositions de sorties en cours (accompagnant trouve)
+                    -> Mes propositions de sorties en cours (accompagnant non trouve)
+                    -> Mes sorties d'accompagnateur que j'ai acceptées en cours
+        */
 
         $nonvalidee = true ;
         $ids = $this->getUser()->getId();
@@ -72,14 +77,12 @@ class DashboardUtilisateurController extends AbstractController
      */
     public function nouvellesortie(Request $request): Response
     {
-        dump($request);
 
         $sortie = new Sortie();
         $sortie->setUser($this->getUser());
         $form = $this->createForm(AjoutsortieType::class, $sortie);
         $form->handleRequest($request);
     
-
         if ($form->isSubmitted() && $form->isValid()) {
             
             $entityManager = $this->getDoctrine()->getManager();
@@ -97,18 +100,22 @@ class DashboardUtilisateurController extends AbstractController
     }
 
     /**
-     * @Route("/dashboard/modificationsortie/{id}", name="modificationsortie", methods={"GET","POST"})
+     * @Route("dashboard/modificationsortie/{id}", name="modificationsortie", methods={"GET","POST"})
      */
     public function modificationsortie(Request $request, Sortie $sortie): Response
     {
+
+        $sortie->setUser($this->getUser());
         $form = $this->createForm(AjoutsortieType::class, $sortie);
         $form->handleRequest($request);
-        dump($request);
+        // var_dump($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('dashboardsortiesencours');
+
         }
 
         return $this->renderForm('dashboardutilisateur/modificationsortie.html.twig', [
@@ -116,6 +123,7 @@ class DashboardUtilisateurController extends AbstractController
             'form' => $form,
         ]);
     }
+    
 
     /**
      * @Route("dashboard/detailsortie/{id}", name="apercusortie", methods={"GET"})
@@ -137,15 +145,19 @@ class DashboardUtilisateurController extends AbstractController
             $entityManager->remove($sortie);
             $entityManager->flush();
         }
+        dump($request);
 
         return $this->redirectToRoute('dashboardsortiesencours');
     }
 
-        /**
+    /**
      * @Route("/dashboard/sortiesterminees", name="dashboardsortiesterminees")
      */
     public function dashboardsortiesterminees(): Response
     {
+
+        /* Methode permettant d'afficher les sorties terminees
+        */
 
         $sortiesterminees = true ;
 

@@ -24,7 +24,7 @@
 							<div class="accompagnanttrouve">
 								<div class="boutajout">
 									<a href="{{ path('nouvellesortie')}}">
-										<button type="submit" class="btn btn-dark">
+										<button type="submit" class="btn btn-danger">
 											Ajouter une sortie
 										</button>
 									</a>
@@ -101,7 +101,8 @@
 							</div>
 							{% for sortie in sortietest %}
 								<div class="sor2">
-									<p> Sortie proposée par : </p>
+
+									<p id="proposition"> Sortie proposée par : </p>
 
 									<div class="personnes">
 										<p> 

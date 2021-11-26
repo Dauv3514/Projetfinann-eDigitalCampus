@@ -579,6 +579,7 @@
     h1 {
 
     font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
 
     }
     
@@ -645,14 +646,11 @@
     img {
 
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     
     }
 
     p {
 
-    text-align: center;
     margin-top: 20px;
 
     }
@@ -667,7 +665,7 @@
 
 .prenom {
 
-    text-align: center;
+    font-weight: bold;
 
 }
 
@@ -817,6 +815,7 @@
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold ;
+    font-size: 30px;
 
     }
     
@@ -1254,9 +1253,16 @@
 
     .textarea {
 
-        width: 200px !important;
+        width: 400px !important;
     
     }
+
+}
+
+.alignerelements {
+
+    display: flex;
+    justify-content: space-around;
 
 }
 
@@ -1308,20 +1314,8 @@
     }
 
 }
-
-.style {
-
-    width: 0px;
-}
     
 }
-
-element.style {
-
-    width: 0px;
-
-}
-
 
 
 /* page modification d'une sortie */
@@ -1348,6 +1342,7 @@ element.style {
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin-top: 60px;
 
 }
 
@@ -1408,8 +1403,6 @@ element.style {
 }
 
 .poubelle {
-
-    padding-top: 30px;
 
     a {
 
@@ -1474,7 +1467,8 @@ element.style {
 
     h1 {
 
-    padding-top: 20px ;
+    padding-top: 80px ;
+    padding-bottom: 40px ;
 
     }
 
@@ -1519,7 +1513,6 @@ element.style {
 
     height: 100%;
     width: 100%;
-    border: 2px solid red;
     
     img {
 
@@ -1534,7 +1527,6 @@ element.style {
 
     height : 100%;
     width : 100%;
-    border: 1px solid red;
 
 
     h1 {
@@ -1561,14 +1553,27 @@ element.style {
 .sor2 {
 
     width: 280px;
-    border: 2px solid blue;
     margin: 30px;
 
 }
 
+#proposition {
+
+    color: #CA2222;
+    font-weight: bold;
+
+}
+
+
 .personnes {
 
     margin-bottom : 30px;
+
+    p {
+
+    font-weight: bold;
+
+    }
 
 }
 
@@ -1645,7 +1650,7 @@ element.style {
 
         h1 {
 
-        font-size: 15px
+        font-size: 24px
 
         }
 
@@ -1703,6 +1708,7 @@ element.style {
     justify-content: center;
     margin-left: 45px;
     margin-right: 45px;
+    margin-top: 60px;
     height: 100%;
 
 }
@@ -1714,6 +1720,8 @@ element.style {
         text-align: center;
         margin-top: 200px;
         margin-left: 400px;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
 
     }
 
@@ -1877,6 +1885,8 @@ element.style {
     text-align: center;
     margin-top: 150px;
     margin-bottom: 100px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
 
     h2 {
 

@@ -41,13 +41,7 @@
 									<p>
 										{{sortie.description}}
 									</p>
-									<a href="{{ path('modificationsortie', { 'id': sortie.id })}}">
-										<button type="submit" class="btn btn-primary">
-											Modifier la sortie
-										</button>
-									</a>
-									<div
-										class="message">{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
+									<div class="message">{# <a href="{{ path('sorties') }}"> <button type="submit" class="btn btn-danger"> Envoyer un message à ... {% for user in users %}{{user.pre}}{% endfor %}</button> </a> #}
 									</div>
 								</div>
 							{% endfor %}

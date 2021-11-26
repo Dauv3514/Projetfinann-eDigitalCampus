@@ -36,17 +36,6 @@ class SiteController extends AbstractController
     }
 
 
-
-    /**
-     * @Route("/presentation", name="presentation")
-     */
-    public function presentation(): Response
-    {
-        return $this->render('site/presentation.html.twig', [
-            'controller_name' => 'SiteController',
-        ]);
-    }
-
     /**
      * @Route("/sorties", name="sorties")
      */
@@ -90,7 +79,6 @@ class SiteController extends AbstractController
     public function connexion(): Response
     {
         return $this->render('site/connexion.html.twig', [
-            'controller_name' => 'SiteController',
         ]);
     }
 
@@ -100,7 +88,6 @@ class SiteController extends AbstractController
     public function inscription(): Response
     {
         return $this->render('site/inscription.html.twig', [
-            'controller_name' => 'SiteController',
         ]);
     }
 
@@ -111,6 +98,16 @@ class SiteController extends AbstractController
     {
         return $this->render('site/conceptshow.html.twig', [
             'articles' => $articles,
+        ]);
+    }
+
+    /**
+     * @Route("/presentation", name="presentation")
+     */
+    public function presentation(): Response
+    {
+        return $this->render('site/presentation.html.twig', [
+            'controller_name' => 'SiteController',
         ]);
     }
 

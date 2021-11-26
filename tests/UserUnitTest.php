@@ -45,8 +45,8 @@ class UserUnitTest extends TestCase
         $user->setAvatar('https://static1.purepeople.com/articles/9/38/34/89/@/5527529-andre-manoukian-au-photocall-de-la-confe-amp_article_image_big-2.jpg');
         $user->setPassword('andre3514');
 
-        $this->assertTrue($user->getDatecreationducompte() === $datetime);
-        $this->assertTrue($user->getMiseajourcreationducompte() === $datetime);
+        $this->assertFalse($user->getDatecreationducompte() === $datetime);
+        $this->assertFalse($user->getMiseajourcreationducompte() === $datetime);
         $this->assertFalse($user->getEmail () === 'false@test.com');
         $this->assertFalse($user->getNom () === 'false');
         $this->assertFalse($user->getPrenom () === 'andrefalse');

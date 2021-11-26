@@ -58,25 +58,26 @@
 						<p>
 							Description
 						</p>
-						{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'size':'200'}}) }}
+						{{ form_widget(form.description, {'attr': {'placeholder': 'Description de la sortie', 'size':'50'}}) }}
 					</div>
 
 					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate')}}">
 
-					<div class="boutonmodif">
-						<a href="{{ path('dashboardsortiesencours')}}">
+					{{ form_end(form) }}
+
+
+				</div>
+				<div class="alignerelements">
+						<div class="boutonmodif">
+							<a href="{{ path('dashboardsortiesencours')}}">
 							<button type="submit" class="btn btn-primary">
 								Modifier
 							</button>
-						</a>
-					</div>
-					{{ form_end(form) }}				
-
-				</div>
+							</a>
+						</div>
+						{{ include('site/supprimer.html.twig') }}
+					</div>				
 			</div>
-
-			{{ include('site/supprimer.html.twig') }}
-
 		</div>
 	</div>
 	</div>
